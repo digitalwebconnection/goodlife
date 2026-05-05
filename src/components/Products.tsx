@@ -4,53 +4,33 @@ const PRODUCTS = [
   { 
     name: 'Wheat Bran', 
     subtitle: 'Digestive Fiber', 
-    color: 'from-amber-50 to-amber-100', 
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M2 20c.5-1.5 1-4 3-5s6-1.5 8-1 4 2.5 5 4.5" /><path d="M7 11c1-1 3-3 3-5s-1-3-3-4" /><path d="M12 7c1-1 3-1.5 5-1s2 1 2 2.5c0 2-2 3.5-5 4" /><path d="M16 16c1-1 4-1 6-1" />
-      </svg>
-    )
+    image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&q=80&w=800',
+    link: 'https://api.whatsapp.com/send?phone=919979740361&text=Hi,%20I%20want%20to%20inquire%20about%20*Wheat%20Bran*.'
   },
   { 
     name: 'Cholesterol Herbs', 
     subtitle: 'Heart Wellness', 
-    color: 'from-red-50 to-red-100', 
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.505 4.044 3 5.5L12 21l7-7Z" />
-      </svg>
-    )
+    image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=800',
+    link: 'https://api.whatsapp.com/send?phone=919979740361&text=Hi,%20I%20want%20to%20inquire%20about%20*Cholesterol%20Herbs*.'
   },
   { 
     name: 'Detox Herbs', 
     subtitle: 'Natural Cleanser', 
-    color: 'from-teal-50 to-teal-100', 
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 18 20" /><path d="M9.1 11a5 5 0 0 1 4.3-1.6" /><path d="M10 13.5a2.5 2.5 0 0 1 2-1.5" />
-      </svg>
-    )
+    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=800',
+    link: 'https://api.whatsapp.com/send?phone=919979740361&text=Hi,%20I%20want%20to%20inquire%20about%20*Detox%20Herbs*.'
   },
   { 
     name: 'Fat Burn Blend', 
     subtitle: 'Metabolic Support', 
-    color: 'from-orange-50 to-orange-100', 
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.203 1.15-3.003L8.5 14.5Z" />
-      </svg>
-    )
+    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=800',
+    link: 'https://api.whatsapp.com/send?phone=919979740361&text=Hi,%20I%20want%20to%20inquire%20about%20*Fat%20Burn%20Blend*.'
   },
   { 
     name: 'Diabetic Herbs', 
     subtitle: 'Sugar Control', 
-    color: 'from-green-50 to-emerald-100', 
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" /><path d="m9 12 2 2 4-4" />
-      </svg>
-    )
-  },
+    image: 'https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&q=80&w=800',
+    link: 'https://api.whatsapp.com/send?phone=919979740361&text=Hi,%20I%20want%20to%20inquire%20about%20*Diabetic%20Herbs*.'
+  }
 ];
 
 export default function Products() {
@@ -61,14 +41,14 @@ export default function Products() {
           <div className="max-w-2xl">
             <p 
               data-aos="fade-down"
-              className="inline-block px-5 py-2 rounded-full bg-brand-light text-brand-black font-black text-[10px] uppercase tracking-[0.3em] mb-6 shadow-sm border border-brand-black/10"
+              className="text-brand-yellow font-black text-[9px] uppercase tracking-[0.5em] mb-4"
             >
               🛒 Natural Products
             </p>
             <h2 
               data-aos="fade-up"
               data-aos-delay="100"
-              className="text-brand-black leading-[1.1] text-[clamp(2.5rem,5vw,4rem)] font-playfair font-bold"
+              className="text-brand-black leading-tight text-[clamp(2rem,4vw,3rem)] font-playfair font-bold"
             >
               Nature's <span className="italic font-normal text-brand-yellow">Healing Apothecary</span>
             </h2>
@@ -84,24 +64,35 @@ export default function Products() {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {PRODUCTS.map((p, i) => (
             <div
               key={p.name}
               data-aos="fade-up"
-              data-aos-delay={100 + i * 150}
-              className="group bg-white rounded-[3rem] overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-700 hover:-translate-y-4"
+              data-aos-delay={100 + i * 100}
+              className="group bg-white border border-gray-100 transition-all duration-700 hover:shadow-2xl"
             >
-              <div className={`h-56 flex items-center justify-center relative bg-gradient-to-br ${p.color} transition-all duration-700 group-hover:bg-gradient-to-tr`}>
-                <div className="w-24 h-24 text-gray-900 opacity-40 transition-all duration-1000 group-hover:scale-125 group-hover:rotate-12 group-hover:opacity-60">
-                  {p.icon}
-                </div>
+              <div className="h-64 flex items-center justify-center relative overflow-hidden">
+                <img 
+                  src={p.image} 
+                  alt={p.name}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-brand-black/20 group-hover:bg-brand-black/40 transition-colors duration-500" />
                 
+                {/* Brand Overlay */}
+                <div className="absolute top-6 left-6">
+                  <span className="text-[8px] font-black uppercase tracking-[0.3em] text-gray-400">Mission GoodLife</span>
+                </div>
+
                 {/* Quick View Overlay */}
-                <div className="absolute inset-0 bg-brand-black/80 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-700 translate-y-10 group-hover:translate-y-0">
+                <div className="absolute inset-0 bg-brand-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                  <span className="text-white font-playfair italic text-lg mb-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">{p.subtitle}</span>
                   <a 
-                    href="https://api.whatsapp.com/send?phone=919979740361" 
-                    className="bg-brand-yellow text-brand-black px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest shadow-2xl transition-all hover:scale-110 active:scale-95"
+                    href={p.link} 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-brand-yellow text-brand-black px-8 py-4 rounded-none text-[9px] font-black uppercase tracking-widest transition-all hover:bg-white translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-200"
                   >
                     Inquire Now
                   </a>
@@ -109,14 +100,17 @@ export default function Products() {
               </div>
 
               <div className="p-8">
-                <h3 className="font-playfair font-bold text-brand-black text-xl mb-2 leading-tight group-hover:text-brand-yellow transition-colors">{p.name}</h3>
-                <p className="text-gray-400 text-[10px] uppercase font-black tracking-[0.2em] mb-6">{p.subtitle}</p>
-                <div className="pt-6 border-t border-gray-50 flex items-center justify-between">
-                  <span className="text-[10px] font-black text-brand-black uppercase tracking-widest flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-brand-yellow animate-pulse" />
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="font-playfair font-bold text-brand-black text-2xl leading-tight group-hover:text-brand-yellow transition-colors">{p.name}</h3>
+                  <span className="text-[8px] font-black text-brand-yellow uppercase tracking-widest border border-brand-yellow/30 px-2 py-1">Organic</span>
+                </div>
+                <p className="text-gray-500 text-[10px] uppercase font-bold tracking-[0.2em] mb-8 leading-relaxed">Pure botanical extract for natural wellness and longevity.</p>
+                
+                <div className="pt-6 border-t border-gray-100 flex items-center justify-between">
+                  <span className="text-[9px] font-black text-brand-black uppercase tracking-widest flex items-center gap-2">
                     Premium Natural
                   </span>
-                  <svg className="w-5 h-5 text-gray-300 transition-all duration-500 group-hover:text-brand-yellow group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="m9 18 6-6-6-6"/></svg>
+                  <svg className="w-4 h-4 text-brand-yellow transition-all duration-500 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </div>
               </div>
             </div>

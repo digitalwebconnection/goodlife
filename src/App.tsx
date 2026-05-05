@@ -14,8 +14,8 @@ import BMICalculator from './components/BMICalculator';
 import Products from './components/Products';
 import FAQ from './components/FAQ';
 import Testimonials from './components/Testimonials';
-import CTABanner from './components/CTABanner';
-import BlogPosts from './components/BlogPosts';
+// import CTABanner from './components/CTABanner';
+// import BlogPosts from './components/BlogPosts';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -63,8 +63,8 @@ export default function App() {
         <Products />
         <FAQ />
         <Testimonials />
-        <CTABanner />
-        <BlogPosts />
+        {/* <CTABanner /> */}
+        {/* <BlogPosts /> */}
       </main>
       <Footer />
 

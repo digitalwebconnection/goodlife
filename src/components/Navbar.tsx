@@ -11,16 +11,28 @@ const NAV_LINKS = [
 ];
 
 export default function Navbar() {
+  const [visible, setVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
-      setScrolled(window.scrollY > 40);
+      const currentScrollY = window.scrollY;
+      
+      // Hide on scroll down, show on scroll up
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setVisible(false);
+      } else {
+        setVisible(true);
+      }
+      
+      setScrolled(currentScrollY > 40);
+      setLastScrollY(currentScrollY);
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  }, [lastScrollY]);
 
   // Prevent scroll when menu is open
   useEffect(() => {
@@ -34,7 +46,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`glass-nav ${scrolled ? 'scrolled' : ''} ${menuOpen ? 'bg-white/100 border-none' : ''}`}
+        className={`glass-nav ${scrolled ? 'scrolled' : ''} ${menuOpen ? 'bg-white/100 border-none' : ''} ${visible ? 'translate-y-0' : '-translate-y-full'}`}
       >
         <div className="container-custom flex items-center justify-between">
           {/* Logo */}

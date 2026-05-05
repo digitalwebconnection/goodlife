@@ -1,4 +1,5 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { ParticleCard, GlobalSpotlight } from './MagicBento';
 
 const CHALLENGES = [
   { 
@@ -44,63 +45,75 @@ const CHALLENGES = [
 ];
 
 export default function HealthChallenges() {
+  const gridRef = useRef<HTMLDivElement>(null);
+  
   return (
-    <section id="challenges" className="section-padding bg-off-white overflow-hidden">
+    <section id="challenges" className="section-padding bg-off-white overflow-hidden bento-section">
+      <GlobalSpotlight 
+        gridRef={gridRef} 
+        glowColor="255, 193, 7" 
+        spotlightRadius={400}
+      />
       <div className="container-custom">
-        <div className="text-center mb-20">
+        <div className="text-center mb-16">
           <p 
             data-aos="fade-down"
-            className="inline-block px-5 py-1.5 rounded-full bg-brand-light text-brand-black font-black text-[10px] uppercase tracking-[0.3em] mb-4 border border-brand-black/10 shadow-sm"
+            className="inline-block px-4 py-1 rounded-full bg-brand-light text-brand-black font-black text-[9px] uppercase tracking-[0.3em] mb-4 border border-brand-black/10 shadow-sm"
           >
             🌱 Start Your Journey
           </p>
           <h2 
             data-aos="fade-up"
             data-aos-delay="100"
-            className="text-brand-black mb-6 leading-tight max-w-2xl mx-auto text-[clamp(2.5rem,5vw,3.5rem)] font-playfair font-bold"
+            className="text-brand-black mb-4 leading-tight max-w-xl mx-auto text-[clamp(1.5rem,4vw,2.5rem)] font-playfair font-bold"
           >
             Your Journey to Better Health <span className="italic font-normal text-brand-yellow">Starts Here</span>
           </h2>
-          <div data-aos="zoom-in" data-aos-delay="200" className="w-24 h-1.5 bg-brand-yellow mx-auto rounded-full opacity-40" />
+          <div data-aos="zoom-in" data-aos-delay="200" className="w-16 h-1 bg-brand-yellow mx-auto rounded-full opacity-40" />
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8" ref={gridRef}>
           {CHALLENGES.map((c, i) => (
-            <div 
+            <ParticleCard 
               key={c.title} 
               data-aos="fade-up"
               data-aos-delay={200 + i * 150}
-              className="group relative bg-white rounded-[2.5rem] p-8 lg:p-12 shadow-sm border border-gray-100 transition-all duration-700 hover:-translate-y-4 hover:shadow-2xl hover:border-brand-yellow/20" 
+              className="magic-bento-card magic-bento-card--border-glow group relative bg-white rounded-none p-6 lg:p-8 shadow-sm border border-gray-100 transition-all duration-700 hover:shadow-xl hover:border-brand-yellow/20"
+              enableTilt={true}
+              enableMagnetism={true}
+              clickEffect={true}
+              glowColor="255, 193, 7"
+              particleCount={8}
             >
               {/* Colored header strip */}
-              <div className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r rounded-t-full ${c.color} opacity-80`} />
+              <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${c.color} opacity-80`} />
               
-              <div className="w-20 h-20 rounded-3xl bg-brand-light flex items-center justify-center text-brand-black transition-all duration-700 group-hover:bg-brand-black group-hover:text-brand-yellow group-hover:shadow-2xl group-hover:shadow-brand-yellow/30 group-hover:-rotate-6">
-                <div className="w-10 h-10">
+              <div className="w-16 h-16 rounded-none bg-brand-light flex items-center justify-center text-brand-black transition-all duration-700 group-hover:bg-brand-black group-hover:text-brand-yellow group-hover:shadow-2xl group-hover:shadow-brand-yellow/30 group-hover:-rotate-6 relative z-20">
+                <div className="w-8 h-8">
                   {c.icon}
                 </div>
               </div>
 
-              <h3 className="font-playfair font-bold text-brand-black text-3xl mt-10 mb-5 leading-tight">
+              <h3 className="font-playfair font-bold text-brand-black text-xl lg:text-2xl mt-8 mb-4 leading-tight relative z-20">
                 {c.title}
               </h3>
               
-              <p className="text-gray-500 text-base leading-relaxed mb-10">
+              <p className="text-gray-500 text-sm leading-relaxed mb-8 relative z-20">
                 {c.desc}
               </p>
 
               <a 
                 href="#contact" 
-                className="relative inline-flex items-center gap-3 text-brand-black font-black text-sm uppercase tracking-widest group/btn py-2"
+                className="relative inline-flex items-center gap-2 text-brand-black font-black text-xs uppercase tracking-widest group/btn py-1 z-20"
               >
                 Read More
-                <svg className="w-5 h-5 transition-transform duration-500 group-hover/btn:translate-x-2 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <svg className="w-4 h-4 transition-transform duration-500 group-hover/btn:translate-x-1 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-yellow transition-all duration-500 group-hover/btn:w-full" />
               </a>
 
               {/* Subtle hover glow */}
-              <div className="absolute inset-0 rounded-[2.5rem] opacity-0 group-hover:opacity-100 transition-opacity duration-700 shadow-[0_30px_100px_rgba(255,193,7,0.15)] pointer-events-none" />
-            </div>
+              <div className="absolute inset-0 rounded-none opacity-0 group-hover:opacity-100 transition-opacity duration-700 shadow-[0_30px_100px_rgba(255,193,7,0.15)] pointer-events-none" />
+            </ParticleCard>
           ))}
         </div>
       </div>
