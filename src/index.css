@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "tailwindcss";
+@import "aos/dist/aos.css";
+
+/* Lenis Recommended CSS */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling [data-lenis-prevent] {
+  pointer-events: none;
+}
+
+@theme {
+  --font-inter: "Inter", sans-serif;
+  --font-playfair: "Playfair Display", serif;
+  --font-jakarta: "Plus Jakarta Sans", sans-serif;
+  
+  --color-brand-black: #000000;
+  --color-brand-yellow: #FFC107;
+  --color-brand-dark: #1A1A1A;
+  --color-brand-gray: #757575;
+  --color-brand-light: #F5F5F5;
+  
+  /* Overriding standard palettes to enforce brand colors globally */
+  --color-green-50: #F9F9F9;
+  --color-green-100: #F5F5F5;
+  --color-green-200: #E0E0E0;
+  --color-green-300: #BDBDBD;
+  --color-green-400: #9E9E9E;
+  --color-green-500: #000000;
+  --color-green-600: #000000;
+  --color-green-700: #000000;
+  --color-green-800: #000000;
+  --color-green-900: #000000;
+  --color-green-950: #000000;
+
+  --color-green-primary: var(--color-brand-black);
+  --color-green-dark: var(--color-brand-black);
+  --color-green-mid: var(--color-brand-dark);
+  --color-green-light: var(--color-brand-gray);
+  --color-green-sage: var(--color-brand-light);
+  --color-green-sage2: #EEEEEE;
+
+  --color-amber-50: #FFFDE7;
+  --color-amber-100: #FFF9C4;
+  --color-amber-200: #FFF59D;
+  --color-amber-300: #FFF176;
+  --color-amber-400: #FFEE58;
+  --color-amber-500: var(--color-brand-yellow);
+  --color-amber-600: #FFB300;
+  --color-amber-700: #FFA000;
+  --color-amber-accent: var(--color-brand-yellow);
+
+  --color-off-white: #FFFFFF;
+  --color-text-primary: #000000;
+}
+
+/* ── Base Styles ── */
+@layer base {
+  html {
+    scroll-behavior: initial; /* Controlled by Lenis */
+  }
+  
+  body {
+    @apply bg-off-white text-text-primary font-jakarta antialiased;
+    overflow-x: hidden;
+  }
+}
+
+/* ── Typography & Components ── */
+@layer components {
+  .section-padding {
+    @apply py-20 lg:py-32;
+  }
+  
+  .container-custom {
+    @apply container mx-auto px-6 lg:px-12 max-w-7xl;
+  }
+
+  /* ── Buttons ── */
+  .btn-primary {
+    @apply bg-green-primary text-white px-8 py-4 rounded-full font-bold transition-all hover:bg-green-dark hover:scale-105 active:scale-95 shadow-lg shadow-green-primary/20;
+  }
+  
+  /* ── Shimmer & Shine ── */
+  .shimmer-hover {
+    @apply relative overflow-hidden;
+  }
+  .shimmer-hover::after {
+    content: "";
+    @apply absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-all duration-1000 skew-x-[-25deg];
+  }
+  .shimmer-hover:hover::after {
+    @apply left-full;
+  }
+
+  /* ── Ripple ── */
+  .ripple-btn { @apply relative overflow-hidden; }
+
+  /* ── Marquee ── */
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .marquee-track {
+    @apply flex w-max;
+    animation: marquee 35s linear infinite;
+  }
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  /* ── FAQ accordion ── */
+  .faq-answer {
+    @apply max-h-0 overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.85,0,0.15,1)] opacity-0;
+  }
+  .faq-answer.open {
+    @apply max-h-[1000px] opacity-100;
+  }
+
+  /* ── Glassmorphism nav ── */
+  .glass-nav {
+    @apply fixed top-0 left-0 right-0 z-50 h-24 flex items-center transition-all duration-700;
+    background: transparent;
+  }
+  .glass-nav.scrolled {
+    @apply h-20 backdrop-blur-2xl bg-white/90 border-b border-gray-100/50 shadow-sm px-4 lg:px-8;
+  }
+
+  /* ── Floating Labels ── */
+  .floating-label-group {
+    @apply relative mb-8;
+  }
+  .floating-label-group input, 
+  .floating-label-group textarea {
+    @apply w-full bg-gray-50 border-2 border-transparent focus:border-green-primary/30 focus:bg-white rounded-[2rem] px-8 py-5 text-gray-900 font-black text-sm transition-all outline-none shadow-inner;
+  }
+  .floating-label-group label {
+    @apply absolute left-8 top-5 text-gray-400 text-sm font-black uppercase tracking-widest pointer-events-none transition-all duration-300;
+  }
+  .floating-label-group input:focus ~ label,
+  .floating-label-group input:not(:placeholder-shown) ~ label,
+  .floating-label-group textarea:focus ~ label,
+  .floating-label-group textarea:not(:placeholder-shown) ~ label {
+    @apply -top-10 left-4 text-green-primary text-[10px];
+  }
+
+  /* ── Noise Overlay ── */
+  .noise-overlay {
+    @apply absolute inset-0 pointer-events-none z-0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.05;
+  }
+
+  /* ── Premium Shadows ── */
+  .shadow-gold {
+    box-shadow: 0 10px 40px -10px rgba(245, 158, 11, 0.4);
+  }
+  .shadow-gold-lg {
+    box-shadow: 0 20px 60px -15px rgba(245, 158, 11, 0.5);
+  }
+  .shadow-inner-green {
+    box-shadow: inset 0 0 100px rgba(27, 94, 32, 0.1);
+  }
+}
+
+/* ── Custom Utility Animations ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-reveal {
+  animation: reveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom Scrollbar for premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-off-white;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-green-primary/20 rounded-full hover:bg-green-primary/40 transition-colors;
+}
