@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div data-aos="fade-up">
             <div className="mb-8">
-              <Logo inverted className="scale-125 origin-left" />
+              <Logo className="w-48 h-auto origin-left" />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-8 max-w-sm font-jakarta uppercase tracking-wider">
               India's premier home-based naturopathy program. Transforming lives through kitchen-based wellness since 2007.

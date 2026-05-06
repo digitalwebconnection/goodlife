@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Logo from './Logo';
 
 const NAV_LINKS = [
@@ -11,28 +11,16 @@ const NAV_LINKS = [
 ];
 
 export default function Navbar() {
-  const [visible, setVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      // Hide on scroll down, show on scroll up
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setVisible(false);
-      } else {
-        setVisible(true);
-      }
-      
-      setScrolled(currentScrollY > 40);
-      setLastScrollY(currentScrollY);
+      setScrolled(window.scrollY > 40);
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
-  }, [lastScrollY]);
+  }, []);
 
   // Prevent scroll when menu is open
   useEffect(() => {
@@ -46,55 +34,50 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`glass-nav ${scrolled ? 'scrolled' : ''} ${menuOpen ? 'bg-white/100 border-none' : ''} ${visible ? 'translate-y-0' : '-translate-y-full'}`}
+        className={`glass-nav ${scrolled ? 'scrolled' : ''} ${menuOpen ? '!bg-white !border-none !top-0 !left-0 !right-0 !rounded-none !h-24' : ''}`}
       >
-        <div className="container-custom flex items-center justify-between">
+        <div className="w-full flex items-center justify-between">
           {/* Logo */}
           <a 
             href="#hero" 
-            className="flex items-center gap-2.5 group transition-all duration-500 hover:scale-[1.05]"
+            className="flex items-center group transition-all duration-500 hover:scale-[1.05]"
           >
-            <Logo inverted={!scrolled && !menuOpen} />
+            <Logo inverted={false} />
           </a>
 
           {/* Desktop Links */}
-          <nav className="hidden lg:flex items-center gap-10">
+          <nav className="hidden lg:flex items-center gap-8">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className={`text-[11px] font-black uppercase tracking-[0.2em] transition-all duration-500 hover:-translate-y-[2px] relative group ${
-                  scrolled ? 'text-brand-black hover:text-brand-yellow' : 'text-white/80 hover:text-brand-yellow'
-                }`}
+                className="text-[11px] font-black uppercase tracking-[0.2em] transition-all duration-500 hover:-translate-y-[2px] relative group text-white/90 hover:text-brand-yellow"
               >
                 {link.label}
                 <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-brand-yellow rounded-full opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500" />
               </a>
             ))}
-          </nav>
-
-          {/* Desktop CTA */}
+             {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-6">
             <a
               href="https://api.whatsapp.com/send?phone=919979740361&text=Hi,%20I%20want%20to%20Slim%20at%20of%20*Home*."
               target="_blank"
               rel="noopener noreferrer"
-              className={`ripple-btn shimmer-hover px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-500 flex items-center gap-3 shadow-lg ${
-                scrolled 
-                ? 'bg-brand-black text-brand-yellow shadow-brand-black/20' 
-                : 'bg-brand-yellow text-brand-black shadow-brand-yellow/20'
-              }`}
+              className="ripple-btn shimmer-hover px-4 py-3 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-500 flex items-center gap-3 shadow-lg bg-brand-yellow text-brand-black shadow-brand-yellow/20"
             >
               Consult Now
               <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
-          </div>
+          </div>  
+          </nav>
+
+         
 
           {/* Mobile Toggle */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className={`lg:hidden relative z-[110] p-2 transition-colors duration-500 ${
-              menuOpen ? 'text-brand-black' : (scrolled ? 'text-brand-black' : 'text-white')
+              menuOpen ? 'text-brand-black' : 'text-white'
             }`}
             aria-label="Toggle menu"
           >

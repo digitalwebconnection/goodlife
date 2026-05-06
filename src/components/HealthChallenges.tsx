@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import { ParticleCard, GlobalSpotlight } from './MagicBento';
 
 const CHALLENGES = [
@@ -48,7 +48,7 @@ export default function HealthChallenges() {
   const gridRef = useRef<HTMLDivElement>(null);
   
   return (
-    <section id="challenges" className="section-padding bg-off-white overflow-hidden bento-section">
+    <section id="challenges" className="py-12 bg-off-white overflow-hidden bento-section">
       <GlobalSpotlight 
         gridRef={gridRef} 
         glowColor="255, 193, 7" 
@@ -88,7 +88,7 @@ export default function HealthChallenges() {
               {/* Colored header strip */}
               <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${c.color} opacity-80`} />
               
-              <div className="w-16 h-16 rounded-none bg-brand-light flex items-center justify-center text-brand-black transition-all duration-700 group-hover:bg-brand-black group-hover:text-brand-yellow group-hover:shadow-2xl group-hover:shadow-brand-yellow/30 group-hover:-rotate-6 relative z-20">
+              <div className="w-16 h-16 rounded-none bg-brand-light flex items-center justify-center text-brand-black transition-all duration-700 group-hover:bg-brand-black group-hover:text-brand-yellow group-hover:shadow-2xl group-hover:shadow-brand-yellow/30 group-hover:-rotate-6 group-hover:rotate-360 relative z-20">
                 <div className="w-8 h-8">
                   {c.icon}
                 </div>

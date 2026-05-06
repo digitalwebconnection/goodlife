@@ -1,128 +1,147 @@
-import { useEffect, useRef } from 'react';
-
 const PRODUCTS = [
-  { 
-    name: 'Wheat Bran', 
-    subtitle: 'Digestive Fiber', 
-    image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&q=80&w=800',
-    link: 'https://api.whatsapp.com/send?phone=919979740361&text=Hi,%20I%20want%20to%20inquire%20about%20*Wheat%20Bran*.'
-  },
-  { 
-    name: 'Cholesterol Herbs', 
-    subtitle: 'Heart Wellness', 
+  {
+    name: 'Cholesterol Herbs',
+    subtitle: 'Heart Wellness',
     image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=800',
-    link: 'https://api.whatsapp.com/send?phone=919979740361&text=Hi,%20I%20want%20to%20inquire%20about%20*Cholesterol%20Herbs*.'
+    link: 'https://api.whatsapp.com/send?phone=919979740361&text=Hi,%20I%20want%20to%20inquire%20about%20*Cholesterol%20Herbs*.',
   },
-  { 
-    name: 'Detox Herbs', 
-    subtitle: 'Natural Cleanser', 
+  {
+    name: 'Detox Herbs',
+    subtitle: 'Natural Cleanser',
     image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=800',
-    link: 'https://api.whatsapp.com/send?phone=919979740361&text=Hi,%20I%20want%20to%20inquire%20about%20*Detox%20Herbs*.'
+    link: 'https://api.whatsapp.com/send?phone=919979740361&text=Hi,%20I%20want%20to%20inquire%20about%20*Detox%20Herbs*.',
   },
-  { 
-    name: 'Fat Burn Blend', 
-    subtitle: 'Metabolic Support', 
+  {
+    name: 'Fat Burn Blend',
+    subtitle: 'Metabolic Support',
     image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=800',
-    link: 'https://api.whatsapp.com/send?phone=919979740361&text=Hi,%20I%20want%20to%20inquire%20about%20*Fat%20Burn%20Blend*.'
+    link: 'https://api.whatsapp.com/send?phone=919979740361&text=Hi,%20I%20want%20to%20inquire%20about%20*Fat%20Burn%20Blend*.',
   },
-  { 
-    name: 'Diabetic Herbs', 
-    subtitle: 'Sugar Control', 
+  {
+    name: 'Diabetic Herbs',
+    subtitle: 'Sugar Control',
     image: 'https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&q=80&w=800',
-    link: 'https://api.whatsapp.com/send?phone=919979740361&text=Hi,%20I%20want%20to%20inquire%20about%20*Diabetic%20Herbs*.'
-  }
+    link: 'https://api.whatsapp.com/send?phone=919979740361&text=Hi,%20I%20want%20to%20inquire%20about%20*Diabetic%20Herbs*.',
+  },
+  {
+    name: 'Wheat Bran',
+    subtitle: 'Organic',
+    description: 'Pure botanical support crafted for natural wellness and everyday vitality.',
+    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=800',
+    link: 'https://api.whatsapp.com/send?phone=919979740361&text=Hi,%20I%20want%20to%20inquire%20about%20*Wheat%20Bran*.',
+  },
 ];
 
 export default function Products() {
   return (
-    <section id="products" className="section-padding bg-white overflow-hidden">
+    <section id="products" className="overflow-hidden bg-[#fbfbf8] py-12 lg:py-16">
       <div className="container-custom">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-10">
+        <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
-            <p 
+            <p
               data-aos="fade-down"
-              className="text-brand-yellow font-black text-[9px] uppercase tracking-[0.5em] mb-4"
+              className="mb-4 text-[9px] font-black uppercase tracking-[0.5em] text-brand-yellow"
             >
-              🛒 Natural Products
+              Natural Products
             </p>
-            <h2 
+            <h2
               data-aos="fade-up"
               data-aos-delay="100"
-              className="text-brand-black leading-tight text-[clamp(2rem,4vw,3rem)] font-playfair font-bold"
+              className="font-playfair text-[clamp(2.1rem,4vw,3.25rem)] font-bold leading-tight text-brand-black"
             >
-              Nature's <span className="italic font-normal text-brand-yellow">Healing Apothecary</span>
+              Nature's <span className="font-normal italic text-brand-yellow">Healing Apothecary</span>
             </h2>
+            <p data-aos="fade-up" data-aos-delay="160" className="mt-4 max-w-xl text-sm leading-relaxed text-gray-500">
+              Carefully selected wellness blends for digestion, metabolism, heart health, detox, and daily balance.
+            </p>
           </div>
+
           <a
             href="https://api.whatsapp.com/send?phone=919979740361"
             data-aos="fade-left"
             data-aos-delay="200"
-            className="hidden md:flex items-center gap-3 text-brand-black font-black text-xs uppercase tracking-[0.2em] group"
+            className="group hidden items-center gap-4 rounded-full bg-brand-black px-6 py-4 text-[10px] font-black uppercase tracking-[0.24em] text-brand-yellow transition-all duration-500 hover:bg-brand-yellow hover:text-brand-black md:inline-flex"
           >
-            View Full Catalogue
-            <svg className="w-5 h-5 transition-transform duration-500 group-hover:translate-x-2 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            View Catalogue
+            <span className="h-px w-7 bg-current transition-transform duration-500 group-hover:translate-x-2" />
           </a>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {PRODUCTS.map((p, i) => (
-            <div
-              key={p.name}
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {PRODUCTS.map((product, i) => (
+            <article
+              key={product.name}
               data-aos="fade-up"
-              data-aos-delay={100 + i * 100}
-              className="group bg-white border border-gray-100 transition-all duration-700 hover:shadow-2xl"
+              data-aos-delay={100 + i * 80}
+              className="product-card group"
             >
-              <div className="h-64 flex items-center justify-center relative overflow-hidden">
-                <img 
-                  src={p.image} 
-                  alt={p.name}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+              <div className="relative aspect-[1.35] overflow-hidden rounded-lg bg-gray-100">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-brand-black/20 group-hover:bg-brand-black/40 transition-colors duration-500" />
-                
-                {/* Brand Overlay */}
-                <div className="absolute top-6 left-6">
-                  <span className="text-[8px] font-black uppercase tracking-[0.3em] text-gray-400">Mission GoodLife</span>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/5 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-95" />
+                <div className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-2 text-[8px] font-black uppercase tracking-[0.22em] text-brand-black backdrop-blur">
+                  Mission GoodLife
+                </div>
+                <a
+                  href={product.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute bottom-4 right-4 flex h-11 w-11 items-center justify-center rounded-full bg-brand-yellow text-brand-black shadow-[0_12px_28px_rgba(0,0,0,0.22)] transition-all duration-500 group-hover:scale-110 group-hover:bg-white"
+                  aria-label={`Inquire about ${product.name}`}
+                >
+                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+
+              <div className="p-5">
+                <div className="mb-4 flex items-start justify-between gap-4">
+                  <div>
+                    <p className="mb-2 text-[8px] font-black uppercase tracking-[0.26em] text-brand-yellow">
+                      {product.subtitle}
+                    </p>
+                    <h3 className="font-playfair text-2xl font-bold leading-tight text-brand-black transition-colors duration-500 group-hover:text-[#b98500]">
+                      {product.name}
+                    </h3>
+                  </div>
+                  <span className="rounded-full border border-brand-yellow/40 bg-[#fff8df] px-3 py-1.5 text-[8px] font-black uppercase tracking-[0.18em] text-[#9a7000]">
+                    Organic
+                  </span>
                 </div>
 
-                {/* Quick View Overlay */}
-                <div className="absolute inset-0 bg-brand-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
-                  <span className="text-white font-playfair italic text-lg mb-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">{p.subtitle}</span>
-                  <a 
-                    href={p.link} 
+                <p className="mb-5 text-sm leading-relaxed text-gray-500">
+                  {product.description || 'Pure botanical support crafted for natural wellness and everyday vitality.'}
+                </p>
+
+                <div className="flex items-center justify-between border-t border-gray-100 pt-4">
+                  <span className="text-[9px] font-black uppercase tracking-[0.22em] text-brand-black">
+                    Premium Natural
+                  </span>
+                  <a
+                    href={product.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-brand-yellow text-brand-black px-8 py-4 rounded-none text-[9px] font-black uppercase tracking-widest transition-all hover:bg-white translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-200"
+                    className="text-[9px] font-black uppercase tracking-[0.2em] text-[#b98500] transition-colors hover:text-brand-black"
                   >
-                    Inquire Now
+                    Inquire
                   </a>
                 </div>
               </div>
-
-              <div className="p-8">
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className="font-playfair font-bold text-brand-black text-2xl leading-tight group-hover:text-brand-yellow transition-colors">{p.name}</h3>
-                  <span className="text-[8px] font-black text-brand-yellow uppercase tracking-widest border border-brand-yellow/30 px-2 py-1">Organic</span>
-                </div>
-                <p className="text-gray-500 text-[10px] uppercase font-bold tracking-[0.2em] mb-8 leading-relaxed">Pure botanical extract for natural wellness and longevity.</p>
-                
-                <div className="pt-6 border-t border-gray-100 flex items-center justify-between">
-                  <span className="text-[9px] font-black text-brand-black uppercase tracking-widest flex items-center gap-2">
-                    Premium Natural
-                  </span>
-                  <svg className="w-4 h-4 text-brand-yellow transition-all duration-500 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </div>
-              </div>
-            </div>
+            </article>
           ))}
         </div>
 
-        <div data-aos="fade-up" className="mt-16 md:hidden">
+        <div data-aos="fade-up" className="mt-8 md:hidden">
           <a
             href="https://api.whatsapp.com/send?phone=919979740361"
-            className="w-full flex items-center justify-center gap-3 bg-green-primary text-white font-black py-6 rounded-[2rem] shadow-xl text-xs uppercase tracking-widest"
+            className="flex w-full items-center justify-center gap-4 rounded-full bg-brand-black py-4 text-[10px] font-black uppercase tracking-[0.24em] text-brand-yellow shadow-xl"
           >
-            Full Catalogue <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            Full Catalogue
+            <span className="h-px w-7 bg-current" />
           </a>
         </div>
       </div>

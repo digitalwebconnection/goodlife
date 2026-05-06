@@ -67,18 +67,6 @@ export default function App() {
         {/* <BlogPosts /> */}
       </main>
       <Footer />
-
-      {/* Floating WhatsApp button */}
-      <a
-        href="https://api.whatsapp.com/send?phone=919979740361&text=Hi,%20I%20want%20to%20Slim%20at%20of%20*Home*."
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Chat on WhatsApp"
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 hover:bg-green-400 rounded-full shadow-2xl flex items-center justify-center text-2xl transition-all duration-300 hover:scale-110"
-        style={{ boxShadow: '0 4px 30px rgba(37,211,102,0.5)' }}
-      >
-        💬
-      </a>
     </>
   );
 }

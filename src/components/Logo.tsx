@@ -1,4 +1,4 @@
-import logoImg from '../assets/logo.png';
+import logoImg from '../assets/logo3.png';
 
 export default function Logo({ className = "", inverted = false }: { className?: string; inverted?: boolean }) {
   return (
@@ -6,7 +6,7 @@ export default function Logo({ className = "", inverted = false }: { className?:
       <img
         src={logoImg}
         alt="Mission GoodLife"
-        className={`h-12 w-auto object-contain transition-all duration-500 ${inverted ? 'brightness-0 invert' : ''}`}
+        className={`h-auto w-38 object-contain transition-all duration-500 ${inverted ? 'brightness-0 invert' : ''}`}
       />
     </div>
   );

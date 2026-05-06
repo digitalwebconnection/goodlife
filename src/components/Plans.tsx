@@ -1,5 +1,3 @@
-import { useEffect, useRef } from 'react';
-
 const PLANS = [
   {
     name: 'Weight Loss & Related Disease Plan',
@@ -45,106 +43,153 @@ const PLANS = [
   },
 ];
 
+const TRUST_SIGNALS = [
+  '100% Natural Healing',
+  'Zero Side Effects',
+  'Expert Guidance',
+  'Instant Support',
+];
+
 export default function Plans() {
   return (
-    <section id="plans" className="section-padding bg-off-white overflow-hidden">
+    <section id="plans" className="overflow-hidden bg-off-white py-12 lg:py-16">
       <div className="container-custom">
-        <div className="text-center mb-16 lg:mb-24">
-          <p 
+        <div className="mb-10 text-center">
+          <p
             data-aos="fade-down"
-            className="text-brand-yellow font-black text-[9px] uppercase tracking-[0.5em] mb-4"
+            className="mb-4 text-[12px] font-black uppercase tracking-[0.5em] text-brand-yellow"
           >
-            💛 Our Programs
+            Our Programs
           </p>
-          <h2 
+          <h2
             data-aos="fade-up"
             data-aos-delay="100"
-            className="text-brand-black mb-8 leading-[1.1] max-w-3xl mx-auto text-[clamp(2.5rem,5vw,4rem)] font-playfair font-bold"
+            className="mx-auto mb-8 max-w-3xl font-playfair text-[clamp(2.5rem,5vw,4rem)] font-bold leading-[1.1] text-brand-black"
           >
             Choose a Plan that Fits<br />
-            <span className="text-brand-yellow italic font-normal">Your Body and Your Life</span>
+            <span className="font-normal italic text-brand-yellow">Your Body and Your Life</span>
           </h2>
-          <div data-aos="zoom-in" data-aos-delay="200" className="w-16 h-[2px] bg-brand-yellow mx-auto opacity-40" />
+          <div data-aos="zoom-in" data-aos-delay="200" className="mx-auto h-[2px] w-16 bg-brand-yellow opacity-40" />
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 items-stretch pt-6">
+        <div className="grid items-stretch gap-5 pt-2 lg:grid-cols-3 lg:gap-6">
           {PLANS.map((plan, i) => (
-            <div
+            <article
               key={plan.name}
               data-aos="fade-up"
               data-aos-delay={200 + i * 150}
-              className={`relative flex flex-col transition-all duration-700 hover:-translate-y-4 ${
+              className={`group relative flex min-h-full flex-col overflow-hidden rounded-lg transition-all duration-500 hover:-translate-y-2 ${
                 plan.featured
-                  ? 'bg-brand-black text-white shadow-2xl z-20'
-                  : 'bg-white text-brand-black border border-gray-100 shadow-xl'
+                  ? 'bg-brand-black text-white shadow-[0_24px_70px_rgba(0,0,0,0.28)] ring-1 ring-brand-yellow/50 lg:-mt-3 lg:mb-3'
+                  : 'bg-white text-brand-black shadow-[0_18px_55px_rgba(0,0,0,0.08)] ring-1 ring-gray-100 hover:shadow-[0_26px_70px_rgba(0,0,0,0.14)] hover:ring-brand-yellow/45'
               }`}
             >
-              {/* Badge */}
+              <div className={`h-2 w-full ${plan.featured ? 'bg-brand-yellow' : 'bg-[linear-gradient(90deg,#000_0%,#000_58%,#FFC107_58%,#FFC107_100%)]'}`} />
+
               {plan.featured && (
-                <div className="absolute top-0 right-0 bg-brand-yellow text-brand-black text-[9px] font-black px-6 py-2 uppercase tracking-widest z-30">
-                  ★ Recommended
+                <div className="absolute right-4 top-4 rounded bg-brand-yellow px-3 py-1.5 text-[8px] font-black uppercase tracking-[0.22em] text-brand-black shadow-lg">
+                  Recommended
                 </div>
               )}
 
-              <div className="p-6 lg:p-10 flex flex-col h-full">
-                <div className="flex items-center gap-3 mb-6">
-                  <span className="text-brand-yellow text-lg">⏱</span>
-                  <span className={`text-[9px] font-black uppercase tracking-[0.3em] ${plan.featured ? 'text-white/60' : 'text-gray-400'}`}>
-                    {plan.duration}
-                  </span>
-                </div>
+              <div className={`pointer-events-none absolute inset-x-0 top-2 h-24 ${
+                plan.featured
+                  ? 'bg-[radial-gradient(circle_at_18%_20%,rgba(255,193,7,0.2),transparent_36%),linear-gradient(135deg,rgba(255,193,7,0.12),transparent_55%)]'
+                  : 'bg-[radial-gradient(circle_at_18%_20%,rgba(255,193,7,0.16),transparent_34%),linear-gradient(135deg,rgba(0,0,0,0.04),transparent_56%)]'
+              }`} />
+              <div className="pointer-events-none absolute -right-12 top-12 h-32 w-32 rounded-full border border-brand-yellow/20 transition-transform duration-700 group-hover:scale-125" />
+              <div className="pointer-events-none absolute -right-6 top-20 h-14 w-14 rounded-full bg-brand-yellow/10 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="pointer-events-none absolute bottom-0 left-0 h-20 w-full bg-gradient-to-t from-brand-yellow/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-                <h3 className={`font-playfair font-bold text-xl mb-4 leading-tight min-h-[3rem] ${plan.featured ? 'text-white' : 'text-brand-black'}`}>
-                  {plan.name}
-                </h3>
-
-                <div className="mb-8 pt-6 border-t border-gray-100/10">
-                  <p className={`text-[9px] font-black uppercase tracking-[0.2em] mb-2 ${plan.featured ? 'text-white/40' : 'text-gray-400'}`}>Starting from</p>
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-lg font-bold text-brand-yellow">₹</span>
-                    <span className={`text-4xl lg:text-5xl font-black font-playfair tracking-tighter ${plan.featured ? 'text-white' : 'text-brand-black'}`}>
-                      {plan.price}
+              <div className="relative z-10 flex h-full flex-col p-5 lg:p-6">
+                <div className="mb-4 flex items-start justify-between gap-4">
+                  <div>
+                    <span
+                      className={`mb-3 inline-flex h-8 w-8 items-center justify-center rounded border text-xs font-black shadow-sm ${
+                        plan.featured
+                          ? 'border-brand-yellow/50 bg-brand-yellow text-brand-black'
+                          : 'border-brand-black bg-brand-black text-brand-yellow'
+                      }`}
+                    >
+                      {i + 1}
                     </span>
                   </div>
                 </div>
 
-                <ul className="space-y-3 flex-1 mb-8">
-                  {plan.features.map((f) => (
-                    <li key={f} className="flex items-start gap-4">
-                      <div className={`mt-1.5 w-1 h-1 rounded-none flex-shrink-0 ${plan.featured ? 'bg-brand-yellow' : 'bg-brand-black'}`} />
-                      <span className={`text-sm leading-relaxed ${plan.featured ? 'text-white/70' : 'text-gray-600'}`}>{f}</span>
+                <div className="mb-4 min-h-[3.25rem]">
+                  <p className={`mb-2 text-[9px] font-black uppercase tracking-[0.3em] ${plan.featured ? 'text-brand-yellow' : 'text-gray-400'}`}>
+                    {plan.duration}
+                  </p>
+                  <h3 className={`font-playfair text-[1.35rem] font-bold leading-[1.08] lg:text-2xl ${plan.featured ? 'text-white' : 'text-brand-black'}`}>
+                    {plan.name}
+                  </h3>
+                </div>
+
+                <div className={`mb-5 rounded-md border px-4 py-3.5 ${
+                  plan.featured
+                    ? 'border-white/10 bg-white/[0.06] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]'
+                    : 'border-gray-100 bg-gray-50/80 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)]'
+                }`}>
+                  <p className={`mb-1.5 text-[8px] font-black uppercase tracking-[0.24em] ${plan.featured ? 'text-white/45' : 'text-gray-400'}`}>
+                    Starting from
+                  </p>
+                  <div className="flex items-end justify-between gap-3">
+                    <div className="flex items-end gap-2">
+                      <span className="pb-1 text-base font-black text-brand-yellow">Rs</span>
+                      <span className={`font-playfair text-4xl font-black leading-none tracking-normal ${plan.featured ? 'text-white' : 'text-brand-black'}`}>
+                        {plan.price}
+                      </span>
+                    </div>
+                    <span className={`hidden rounded px-2 py-1 text-[8px] font-black uppercase tracking-[0.18em] sm:inline-flex ${
+                      plan.featured ? 'bg-brand-yellow text-brand-black' : 'bg-white text-brand-black ring-1 ring-gray-200'
+                    }`}>
+                      Plan
+                    </span>
+                  </div>
+                </div>
+
+                <ul className="mb-5 flex-1 space-y-2.5">
+                  {plan.features.map((feature) => (
+                    <li key={feature} className="flex items-start gap-2.5">
+                      <span
+                        className={`mt-0.5 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded text-[9px] font-black ${
+                          plan.featured
+                            ? 'bg-brand-yellow text-brand-black'
+                            : 'bg-brand-black text-brand-yellow'
+                        }`}
+                      >
+                        +
+                      </span>
+                      <span className={`text-xs leading-relaxed lg:text-[13px] ${plan.featured ? 'text-white/72' : 'text-gray-600'}`}>{feature}</span>
                     </li>
                   ))}
                 </ul>
 
-                <a
-                  href={plan.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`group relative overflow-hidden font-black py-5 text-center text-[10px] uppercase tracking-[0.3em] transition-all duration-500 ${
-                    plan.featured
-                      ? 'bg-brand-yellow text-brand-black hover:bg-white'
-                      : 'bg-brand-black text-brand-yellow hover:bg-brand-yellow hover:text-brand-black'
-                  }`}
-                >
-                  <span className="relative z-10">{plan.cta}</span>
-                </a>
+                <div className={`rounded-md p-1 ${plan.featured ? 'bg-white/10' : 'bg-gray-50'}`}>
+                  <a
+                    href={plan.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`relative flex items-center justify-center gap-3 overflow-hidden rounded py-3.5 text-center text-[9px] font-black uppercase tracking-[0.24em] transition-all duration-500 ${
+                      plan.featured
+                        ? 'bg-brand-yellow text-brand-black hover:bg-white'
+                        : 'bg-brand-black text-brand-yellow hover:bg-brand-yellow hover:text-brand-black'
+                    }`}
+                  >
+                    <span className="relative z-10">{plan.cta}</span>
+                    <span className="relative z-10 h-px w-5 bg-current transition-transform duration-500 group-hover:translate-x-1" />
+                  </a>
+                </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
-        
-        {/* Trust signal bar */}
-        <div data-aos="fade-up" data-aos-delay="600" className="mt-16 pt-8 border-t border-gray-100 flex flex-wrap justify-center gap-x-12 gap-y-6">
-          {[
-            { l: '100% Natural Healing', i: '✦' },
-            { l: 'Zero Side Effects', i: '✦' },
-            { l: 'Expert Guidance', i: '✦' },
-            { l: 'Instant Support', i: '✦' }
-          ].map(t => (
-            <div key={t.l} className="flex items-center gap-3">
-              <span className="text-brand-yellow text-lg">{t.i}</span>
-              <span className="text-[9px] font-black uppercase tracking-[0.3em] text-gray-400">{t.l}</span>
+
+        <div data-aos="fade-up" data-aos-delay="600" className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-4 border-t border-gray-100 pt-6">
+          {TRUST_SIGNALS.map((signal) => (
+            <div key={signal} className="flex items-center gap-3">
+              <span className="h-1.5 w-1.5 bg-brand-yellow" />
+              <span className="text-[9px] font-black uppercase tracking-[0.3em] text-gray-400">{signal}</span>
             </div>
           ))}
         </div>

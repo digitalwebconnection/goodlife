@@ -1,4 +1,10 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
+
+const HERO_IMAGES = [
+  "https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=2040&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=2040&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=2040&auto=format&fit=crop"
+];
 
 const STATS = [
   { value: '4.9/5', label: 'Google Rating', id: 'stat-1' },
@@ -7,32 +13,43 @@ const STATS = [
 ];
 
 export default function Hero() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % HERO_IMAGES.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
       id="hero"
       className="relative w-full h-screen flex items-center pt-24 pb-12 overflow-hidden bg-brand-black"
     >
-      {/* Background Layers */}
+      {/* Background Carousel */}
       <div className="absolute inset-0 z-0 w-full h-full">
-        <img
-          src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2040&auto=format&fit=crop"
-          alt="Wellness background"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-brand-black/60" />
+        {HERO_IMAGES.map((img, index) => (
+          <div
+            key={img}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === activeIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <img
+              src={img}
+              alt={`Wellness background ${index + 1}`}
+              className="w-full h-full object-cover scale-105 animate-slow-zoom"
+            />
+            <div className="absolute inset-0 bg-brand-black/40" />
+          </div>
+        ))}
       </div>
-
-      {/* Removed botanical illustrations for simplicity */}
 
       {/* Main Content */}
       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-24 grid lg:grid-cols-12 gap-8 items-center">
         {/* Left Content */}
         <div className="lg:col-span-7 w-full">
-          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-brand-yellow/5 border border-brand-yellow/10 backdrop-blur-md text-[10px] font-bold text-brand-yellow tracking-[0.3em] uppercase mb-8 animate-fade-in">
-            <span className="w-2 h-2 rounded-full bg-brand-yellow animate-pulse" />
-            India's #1 Naturopathy Program
-          </div>
-
           <h1 className="font-playfair font-black text-white leading-[1.1] tracking-tight mb-6 text-[clamp(2rem,5vw,4rem)]">
             Transform Your<br />
             Health, <span className="italic text-brand-yellow">Naturally.</span>
@@ -97,10 +114,20 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
-      {/* Simplified Footer / No Ticker for maximum simplicity */}
-
-
+      
+      {/* Carousel Indicators */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+        {HERO_IMAGES.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setActiveIndex(index)}
+            className={`h-1.5 rounded-full transition-all duration-500 ${
+              index === activeIndex ? 'w-8 bg-brand-yellow' : 'w-2 bg-white/30 hover:bg-white/50'
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
     </section>
   );
 }
