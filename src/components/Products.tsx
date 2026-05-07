@@ -30,6 +30,12 @@ const PRODUCTS = [
     image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=800',
     link: 'https://api.whatsapp.com/send?phone=919979740361&text=Hi,%20I%20want%20to%20inquire%20about%20*Wheat%20Bran*.',
   },
+  {
+    name: 'PCOS Balance',
+    subtitle: 'Hormonal Support',
+    image: 'https://images.unsplash.com/photo-1540331547168-8b63109225b7?auto=format&fit=crop&q=80&w=800',
+    link: 'https://api.whatsapp.com/send?phone=919979740361&text=Hi,%20I%20want%20to%20inquire%20about%20*PCOS%20Balance*.',
+  }
 ];
 
 export default function Products() {
