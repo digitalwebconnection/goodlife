@@ -19,6 +19,7 @@ import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
 import WellnessHeroSection from './components/WellnessSection';
 import TestimonialsGallery from './components/TestimonialsGallery';
+import GoodlifeVideos from './components/GoodlifeVideos';
 
 export default function App() {
   useEffect(() => {
@@ -67,6 +68,7 @@ export default function App() {
         <Contact />
         <FAQ />
         <TestimonialsGallery />
+        <GoodlifeVideos/>
         <Testimonials />
         {/* <CTABanner /> */}
         {/* <BlogPosts /> */}

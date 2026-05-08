@@ -5,21 +5,21 @@ const TESTIMONIALS = [
     name: 'Mrs. Rekha Sharma',
     location: 'Ahmedabad',
     image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80',
-    text: 'I lost 12kg in just 3 months following Sanjay sir’s naturopathy plan. No gym, just kitchen-based detox and the right meal timing. It’s life-changing!',
+    text: 'Nice service and proper guidance,help me lot',
     tag: 'Weight Loss'
   },
   {
-    name: 'Mr. Rajesh Patel',
-    location: 'Surat',
+    name: 'Mr. Bhavin Shah',
+    location: 'Ahmedabad',
     image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80',
-    text: 'My blood sugar levels have stabilized and I feel more energetic than ever. The detox herbs are incredibly effective and 100% natural.',
+    text: 'I have been using from last couple of months and I have positive impact on body.',
     tag: 'Metabolic Health'
   },
   {
     name: 'Mrs. Anjali Gupta',
-    location: 'Mumbai',
+    location: 'Ahmedabad',
     image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
-    text: 'The 90-day plan reversed my PCOS symptoms naturally. I never thought home remedies could be this powerful. Highly recommend Mission GoodLife!',
+    text: 'Amazing products and very effective. They keep in touch every day and guide us about our diet plan and monitor our progress.',
     tag: 'PCOS Management'
   },
 ];
@@ -79,7 +79,7 @@ export default function PremiumTestimonials() {
                 </p>
 
                 <div className="flex items-center gap-4 pt-6">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-800 to-green-950 flex items-center justify-center text-white text-xl font-serif shadow-lg">
+                  <div className="w-16 h-16 rounded-full bg-linear-to-br from-green-800 to-green-950 flex items-center justify-center text-white text-xl font-serif shadow-lg">
                     {TESTIMONIALS[active].name.charAt(0)}
                   </div>
                   <div>
