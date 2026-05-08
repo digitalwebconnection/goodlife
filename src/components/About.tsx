@@ -61,7 +61,7 @@ export default function About() {
           {/* Left: Text Content */}
           <div className="lg:col-span-7" data-aos="fade-right">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-[2px] bg-[#FFC300]" />
+              <div className="w-12 h-[2px] bg-brand-teal" />
               <p className="text-brand-black font-black text-[10px] uppercase tracking-[0.5em]">
                 Founded 2007
               </p>
@@ -69,14 +69,14 @@ export default function About() {
 
             <h2 className="text-brand-black mb-8 leading-[1.1] text-[clamp(2.2rem,5vw,3.5rem)] font-playfair font-bold">
               18+ Years of <br />
-              <span className="text-[#FFC300]">Natural Healing</span> Mastery
+              <span className="text-brand-teal">Natural Healing</span> Mastery
             </h2>
 
             <div className="space-y-6 text-gray-600 leading-relaxed max-w-2xl text-base lg:text-lg mb-10">
               <p>
                 <strong className="text-brand-black font-black">Mission GoodLife</strong> was founded on a simple yet profound truth: your body has an innate ability to heal itself when given the right natural conditions.
               </p>
-              <p className="border-l-4 border-[#FFC300] pl-6 py-3 italic bg-brand-light/50 text-sm lg:text-base">
+              <p className="border-l-4 border-brand-teal pl-6 py-3 italic bg-brand-light/50 text-sm lg:text-base">
                 Under the visionary leadership of Mr. Sanjay K. Sinha, we have spent nearly two decades perfecting the art of home-based naturopathy.
               </p>
             </div>
@@ -85,11 +85,11 @@ export default function About() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {TRUST_POINTS.map((pt, i) => (
                 <div key={i} className="flex flex-col gap-3 group">
-                  <div className="w-12 h-12 bg-brand-black flex items-center justify-center text-[#FFC300] transition-all duration-500 group-hover:bg-[#FFC300] group-hover:text-brand-black">
+                  <div className="w-12 h-12 bg-brand-black flex items-center justify-center text-brand-lime transition-all duration-500 group-hover:bg-brand-lime group-hover:text-white">
                     <div className="w-6 h-6">{pt.icon}</div>
                   </div>
                   <div>
-                    <h4 className="text-brand-black font-black text-sm uppercase tracking-tight mb-1 group-hover:text-[#FFC300] transition-colors">
+                    <h4 className="text-brand-black font-black text-sm uppercase tracking-tight mb-1 group-hover:text-brand-lime transition-colors">
                       {pt.title}
                     </h4>
                     <p className="text-gray-500 text-xs">

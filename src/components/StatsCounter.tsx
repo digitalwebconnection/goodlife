@@ -62,16 +62,16 @@ export default function StatsCounter() {
             className="text-brand-black text-3xl sm:text-4xl lg:text-5xl font-playfair font-bold leading-tight"
           >
             Numbers That Speak <br />
-            <span className="text-[#FFC300]  font-semibold">For Themselves</span>
+            <span className="text-brand-teal font-semibold">For Themselves</span>
           </h2>
           <div
             data-aos="zoom-in"
             data-aos-delay="200"
-            className="w-20 h-[2px] bg-[#FFC300] mx-auto mt-8 opacity-40"
+            className="w-20 h-[2px] bg-brand-teal mx-auto mt-8 opacity-40"
           />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mt-4 p-4 lg:p-0">
+        <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mt-4 p-4 lg:p-0">
           {STATS.map((stat, i) => {
             // eslint-disable-next-line react-hooks/rules-of-hooks
             const count = useCounter(stat.target, visible);
@@ -82,7 +82,7 @@ export default function StatsCounter() {
                 key={stat.id}
                 data-aos="fade-up"
                 data-aos-delay={300 + i * 150}
-                className="relative bg-[#FFC300]/20 group transition-all duration-500 border border-gray-100 hover:border-brand-black hover:shadow-[0_0_30px_rgba(0,0,0,0.2)] hover:-translate-y-1 hover:z-10"
+                className="relative bg-brand-teal/5 group transition-all duration-500 border border-gray-200 hover:border-brand-teal shadow-black/60 shadow-xl hover:shadow-[0_0_30px_rgba(1,180,189,0.2)] hover:-translate-y-1 hover:z-10"
               >
                 <div className="absolute inset-0 z-0 pointer-events-none mix-blend-overlay opacity-30 group-hover:opacity-100 transition-opacity duration-700">
                 </div>
@@ -100,13 +100,13 @@ export default function StatsCounter() {
                     <span className="relative z-10">
                       {stat.target >= 1000 ? (count >= 1000 ? `${Math.floor(count / 1000)}k` : count) : count}
                     </span>
-                    <span className="text-xl lg:text-2xl text-[#FFC300] ml-1 italic drop-shadow-sm">{stat.suffix}</span>
+                    <span className="text-xl lg:text-2xl text-brand-teal ml-1 italic drop-shadow-sm">{stat.suffix}</span>
                   </div>
 
                   {/* Animated Accent Bar */}
                   <div className="w-full h-px bg-white/5 relative overflow-hidden mt-auto">
                     <div
-                      className="absolute inset-0 bg-linear-to-r from-transparent via-[#FFC300] to-transparent transition-all duration-1500 ease-out"
+                      className="absolute inset-0 bg-linear-to-r from-transparent via-brand-teal to-transparent transition-all duration-1500 ease-out"
                       style={{
                         transform: isCompleted ? 'translateX(0)' : 'translateX(-100%)',
                         transitionDelay: `${i * 100}ms`
@@ -115,7 +115,7 @@ export default function StatsCounter() {
                   </div>
 
                   <div className="flex items-center gap-2 mt-6 transition-all duration-700">
-                    <svg className="w-4 h-4 text-[#FFC300]" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" /></svg>
+                    <svg className="w-4 h-4 text-brand-teal" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" /></svg>
                     <span className="text-[8px] font-black text-gray-600 uppercase tracking-widest">Verified Success</span>
                   </div>
                 </div>

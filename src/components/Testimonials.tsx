@@ -26,13 +26,13 @@ const TESTIMONIALS = [
 
 
 const QuoteIcon = () => (
-  <svg className="w-14 h-14 text-green-100" viewBox="0 0 24 24" fill="currentColor">
+  <svg className="w-14 h-14 text-brand-lime/20" viewBox="0 0 24 24" fill="currentColor">
     <path d="M14.017 21L14.017 18C14.017 16.899 15.119 15.897 16.119 15.897L16.119 14.003C13.911 14.003 12.017 15.897 12.017 18.097L12.017 21L14.017 21ZM5.017 21L5.017 18C5.017 16.899 6.119 15.897 7.119 15.897L7.119 14.003C4.911 14.003 3.017 15.897 3.017 18.097L3.017 21L5.017 21Z" />
   </svg>
 );
 
 const ShieldIcon = () => (
-  <svg className="w-4 h-4 text-green-700" viewBox="0 0 24 24" fill="currentColor">
+  <svg className="w-4 h-4 text-brand-teal" viewBox="0 0 24 24" fill="currentColor">
     <path d="M12 1.5L5 4v5.5c0 5.25 3.75 10.25 7 11 3.25-.75 7-5.75 7-11V4l-7-2.5zm0 3.5l4 1.43V10c0 3.95-2.55 7.5-4 8.12-1.45-.62-4-4.17-4-8.12V6.43L12 5z" />
   </svg>
 );
@@ -55,18 +55,18 @@ export default function PremiumTestimonials() {
 
   return (
     <section className="relative py-12 lg:py-18 bg-[#FDFCF8] overflow-hidden">
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-green-50/50 skew-x-12 translate-x-20 z-0" />
-      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-amber-50 rounded-full blur-3xl opacity-60" />
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-teal/5 skew-x-12 translate-x-20 z-0" />
+      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-brand-lime/5 rounded-full blur-3xl opacity-60" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col items-center text-center mb-20" data-aos="fade-up">
-            <div className="flex items-center gap-3 text-[#FFC300] font-bold tracking-[0.2em] text-[10px] lg:text-xs uppercase mb-6">
+            <div className="flex items-center gap-3 text-brand-teal font-bold tracking-[0.2em] text-[10px] lg:text-xs uppercase mb-6">
               Voice of the People
             </div>
             <h2 className="text-3xl font-bold lg:text-6xl font-playfair text-brand-black leading-[1.1] max-w-3xl">
               Healing through
-              <span className="italic text-[#FFC300] block sm:inline lg:ml-3"> Nature&apos;s Wisdom.</span>
+              <span className="italic text-brand-orange block sm:inline lg:ml-3"> Nature&apos;s Wisdom.</span>
             </h2>
           </div>
 
@@ -79,7 +79,7 @@ export default function PremiumTestimonials() {
                 </p>
 
                 <div className="flex items-center gap-4 pt-6">
-                  <div className="w-16 h-16 rounded-full bg-linear-to-br from-green-800 to-green-950 flex items-center justify-center text-white text-xl font-serif shadow-lg">
+                  <div className="w-16 h-16 rounded-full bg-brand-teal flex items-center justify-center text-white text-xl font-serif shadow-lg">
                     {TESTIMONIALS[active].name.charAt(0)}
                   </div>
                   <div>
@@ -88,7 +88,7 @@ export default function PremiumTestimonials() {
                       <MapPinIcon />
                       {TESTIMONIALS[active].location}
                       <span className="mx-2">•</span>
-                      <span className="text-green-700 font-semibold">{TESTIMONIALS[active].tag}</span>
+                      <span className="text-brand-teal font-semibold">{TESTIMONIALS[active].tag}</span>
                     </div>
                   </div>
                 </div>
@@ -105,7 +105,7 @@ export default function PremiumTestimonials() {
                   />
                   <circle
                     cx="50%" cy="50%" r="48%"
-                    className="stroke-green-800 fill-none"
+                    className="stroke-brand-teal fill-none"
                     strokeWidth="3"
                     strokeDasharray="100"
                     strokeDashoffset={100 - ((active + 1) / TESTIMONIALS.length) * 100}
@@ -131,7 +131,7 @@ export default function PremiumTestimonials() {
                   <button
                     key={i}
                     onClick={() => setActive(i)}
-                    className={`h-2 rounded-full transition-all duration-500 ${active === i ? 'w-12 bg-green-800' : 'w-2 bg-slate-200'
+                    className={`h-2 rounded-full transition-all duration-500 ${active === i ? 'w-12 bg-brand-teal' : 'w-2 bg-slate-200'
                       }`}
                   />
                 ))}

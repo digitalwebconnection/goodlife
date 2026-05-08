@@ -33,7 +33,7 @@ export default function PremiumGallery() {
     <section className="relative overflow-hidden bg-[#fdfdfb] py-8 lg:py-12">
       {/* Background Decor */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-[0.03] pointer-events-none" 
-           style={{ backgroundImage: `radial-gradient(#d4af37 1px, transparent 1px)`, backgroundSize: '40px 40px' }} />
+           style={{ backgroundImage: `radial-gradient(var(--color-brand-teal) 1px, transparent 1px)`, backgroundSize: '40px 40px' }} />
 
       <div className="container relative z-10 mx-auto px-6">
         
@@ -43,10 +43,10 @@ export default function PremiumGallery() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-800 bg-amber-50 px-5 py-2"
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-teal/20 bg-brand-teal/5 px-5 py-2"
           >
-            <CheckCircle2 className="h-4 w-4 text-amber-900" />
-            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-amber-900">
+            <CheckCircle2 className="h-4 w-4 text-brand-teal" />
+            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-brand-teal">
               Verified Results
             </span>
           </motion.div>
@@ -59,7 +59,7 @@ export default function PremiumGallery() {
             className="text-6xl font-serif font-bold leading-[0.9] tracking-tighter text-slate-900 drop-shadow-[0_2px_60px_rgba(0,0,0,0.18)]"
           >
             Stories of 
-            <span className="font-normal text-[#FFC300]"> Resilience.</span>
+            <span className="font-normal text-brand-orange"> Resilience.</span>
           </motion.h2>
 
           <motion.p 
@@ -80,7 +80,7 @@ export default function PremiumGallery() {
           animateFrom="bottom"
           renderItem={(item) => (
             <div
-              className="group relative h-full w-full cursor-pointer overflow-hidden bg-white shadow-xl shadow-black/50 ring-1 ring-slate-200/50 transition-all hover:shadow-2xl hover:shadow-amber-500/10"
+              className="group relative h-full w-full cursor-pointer overflow-hidden bg-white shadow-xl shadow-black/50 ring-1 ring-slate-200/50 transition-all hover:shadow-2xl hover:shadow-brand-teal/10"
               onClick={() => setSelectedImg(item.img)}
             >
               {/* Overlay Info */}

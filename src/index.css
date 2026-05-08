@@ -25,40 +25,45 @@ html.lenis, html.lenis body {
   --font-jakarta: "Archivo", sans-serif;
   
   --color-brand-black: #000000;
-  --color-[#FFC300]: #FFC107;
   --color-brand-dark: #1A1A1A;
   --color-brand-gray: #757575;
   --color-brand-light: #F5F5F5;
+
+  /* New Requested Vibrant Brand Palette */
+  --color-brand-teal: #01B4BD;
+  --color-brand-orange: #FE8543;
+  --color-brand-lime: #93C512;
+  --color-brand-amber: #FBAD18;
   
   /* Overriding standard palettes to enforce brand colors globally */
-  --color-green-50: #F9F9F9;
-  --color-green-100: #F5F5F5;
-  --color-green-200: #E0E0E0;
-  --color-green-300: #BDBDBD;
-  --color-green-400: #9E9E9E;
-  --color-green-500: #000000;
-  --color-green-600: #000000;
-  --color-green-700: #000000;
-  --color-green-800: #000000;
-  --color-green-900: #000000;
-  --color-green-950: #000000;
+  --color-green-50: #f7fce8;
+  --color-green-100: #edf8ce;
+  --color-green-200: #dbf0a2;
+  --color-green-300: #c1e46f;
+  --color-green-400: #a7d544;
+  --color-green-500: var(--color-brand-lime);
+  --color-green-600: #74a10a;
+  --color-green-700: #577b0c;
+  --color-green-800: #476210;
+  --color-green-900: #3d5312;
+  --color-green-950: #1f2e05;
 
-  --color-green-primary: var(--color-brand-black);
-  --color-green-dark: var(--color-brand-black);
-  --color-green-mid: var(--color-brand-dark);
-  --color-green-light: var(--color-brand-gray);
-  --color-green-sage: var(--color-brand-light);
-  --color-green-sage2: #EEEEEE;
+  --color-green-primary: var(--color-brand-lime);
+  --color-green-dark: #74a10a;
+  --color-green-mid: #577b0c;
+  --color-green-light: var(--color-brand-lime);
+  --color-green-sage: #f7fce8;
+  --color-green-sage2: #edf8ce;
 
-  --color-amber-50: #FFFDE7;
-  --color-amber-100: #FFF9C4;
-  --color-amber-200: #FFF59D;
-  --color-amber-300: #FFF176;
-  --color-amber-400: #FFEE58;
-  --color-amber-500: var(--color-[#FFC300]);
-  --color-amber-600: #FFB300;
-  --color-amber-700: #FFA000;
-  --color-amber-accent: var(--color-[#FFC300]);
+  --color-amber-50: #fff9e6;
+  --color-amber-100: #ffefc2;
+  --color-amber-200: #ffdf85;
+  --color-amber-300: #ffca47;
+  --color-amber-400: #ffb41a;
+  --color-amber-500: var(--color-brand-amber);
+  --color-amber-600: #e69100;
+  --color-amber-700: #b36b00;
+  --color-amber-accent: var(--color-brand-amber);
 
   --color-off-white: #FFFFFF;
   --color-text-primary: #000000;

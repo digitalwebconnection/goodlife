@@ -24,7 +24,7 @@ export default function Footer() {
                 <a
                   key={i}
                   href="#"
-                  className="text-gray-100 hover:text-[#FFC300] transition-all duration-300"
+                  className="text-gray-100 hover:text-brand-amber transition-all duration-300"
                 >
                   {social.icon}
                 </a>
@@ -38,7 +38,7 @@ export default function Footer() {
             <ul className="space-y-4">
               {['Home', 'About Us', 'Programs', 'Products', 'Blogs'].map(l => (
                 <li key={l}>
-                  <a href={`#${l.toLowerCase().replace(' ', '-')}`} className="text-gray-100 hover:text-[#FFC300] transition-colors text-sm font-medium">
+                  <a href={`#${l.toLowerCase().replace(' ', '-')}`} className="text-gray-100 hover:text-brand-amber transition-colors text-sm font-medium">
                     {l}
                   </a>
                 </li>
@@ -70,9 +70,9 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Your Email"
-                className="w-full bg-white/3 border border-white/60 rounded-none px-4 py-3 text-white text-sm outline-none focus:border-[#FFC300] transition-all duration-300 font-jakarta placeholder:text-gray-100"
+                className="w-full bg-white/3 border border-white/60 rounded-none px-4 py-3 text-white text-sm outline-none focus:border-brand-amber transition-all duration-300 font-jakarta placeholder:text-gray-100"
               />
-              <button className="bg-[#FFC300] hover:bg-white text-brand-black py-3 rounded-none transition-all duration-500 font-black text-[10px] uppercase tracking-widest">
+              <button className="bg-brand-amber hover:bg-white text-brand-black py-3 rounded-none transition-all duration-500 font-black text-[10px] uppercase tracking-widest">
                 Join Now
               </button>
             </form>

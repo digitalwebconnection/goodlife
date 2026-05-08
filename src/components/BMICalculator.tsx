@@ -98,7 +98,7 @@ export default function BMICalculator() {
             KNOW YOUR <br /> <span>Body – TRY OUR FREE HEALTH TOOL</span>
           </h1>
         </div>
-        <div className=" bg-[#FFC300] py-2  px-10 rounded-t-lg w-full flex justify-between">
+        <div className=" bg-brand-amber py-2  px-10 rounded-t-lg w-full flex justify-between">
           <div className=" py-5">  
             <h2 className=" text-3xl  font-semibold">BMI Calculator</h2>
             <p className=" text-lg">Use this calculator to check your body mass index (BMI).</p></div>
@@ -117,14 +117,14 @@ export default function BMICalculator() {
             className="glass-card shadow-lg shadow-black"
           >
             <div className="card-header">
-              <h2 className="text-[#FFC300] mb-4!">Height</h2>
+              <h2 className="text-brand-amber mb-4!">Height</h2>
             </div>
             <div className="relative mb-6">
               <input
                 type="number"
                 value={height}
                 onChange={(e) => setHeight(e.target.value)}
-                className={`input-gold border-[#FFC300] border-2 p-2 rounded-lg ${heightError ? 'border-red-500' : ''}`}
+                className={`input-gold border-brand-amber border-2 p-2 rounded-lg ${heightError ? 'border-red-500' : ''}`}
                 placeholder="150"
               />
               <span className="input-suffix ms-10  text-lg">cm.</span>
@@ -132,7 +132,7 @@ export default function BMICalculator() {
             </div>
 
             <div className="card-header">
-              <h2 className="text-[#FFC300] mb-4!">Weight</h2>
+              <h2 className="text-brand-amber mb-4!">Weight</h2>
             </div>
             <div className="relative mb-10">
               <input
@@ -140,7 +140,7 @@ export default function BMICalculator() {
                 step="0.1"
                 value={weight}
                 onChange={(e) => setWeight(e.target.value)}
-                className={`input-gold border-[#FFC300] border-2 p-2 rounded-lg ${weightError ? 'border-red-500' : ''}`}
+                className={`input-gold border-brand-amber border-2 p-2 rounded-lg ${weightError ? 'border-red-500' : ''}`}
                 placeholder="Your weight"
                 
               />
@@ -150,7 +150,7 @@ export default function BMICalculator() {
 
             <button 
               onClick={() => { setHeight(170); setWeight(70); }}
-              className="w-full bg-[#718e9a] py-4 rounded-lg text-white font-bold flex items-center justify-center gap-2 hover:bg-[#5f7a85] transition-colors"
+              className="w-full bg-brand-teal py-4 rounded-lg text-white font-bold flex items-center justify-center gap-2 hover:bg-brand-teal/80 transition-colors"
             >
               Recalculate BMI <span className="-rotate-45">↺</span>
             </button>
@@ -234,12 +234,12 @@ export default function BMICalculator() {
             <div className="space-y-6">
               <div>
                 <h3 className="text-sm font-bold text-[#333]">Your Body Mass Index (BMI) is</h3>
-                <p className="text-4xl font-black text-[#FFC300] mt-1">{bmi.toFixed(2)}</p>
+                <p className="text-4xl font-black text-brand-orange mt-1">{bmi.toFixed(2)}</p>
               </div>
 
               <div>
                 <h3 className="text-sm font-bold text-[#333]">Based on your input, your BMI is in the category</h3>
-                <p className="text-4xl font-black text-[#FFC300] mt-1">{currentLevel?.label}</p>
+                <p className="text-4xl font-black text-brand-orange mt-1">{currentLevel?.label}</p>
               </div>
 
               <div className="py-4 relative">
@@ -257,13 +257,13 @@ export default function BMICalculator() {
 
               <div className="py-4 border-t border-gray-100">
                 <p className="text-lg font-bold text-black">
-                  For your height, a healthy weight would be between <span className="text-[#ffc400]">{healthyWeight.min} - {healthyWeight.max}</span> kilograms
+                  For your height, a healthy weight would be between <span className="text-brand-lime">{healthyWeight.min} - {healthyWeight.max}</span> kilograms
                 </p>
               </div>
             </div>
 
 
-            <button className="expert-btn">
+            <button className="expert-btn bg-brand-teal! text-white! hover:bg-brand-teal/90!">
               GET EXPERT ADVICE →
             </button>
           </motion.div>

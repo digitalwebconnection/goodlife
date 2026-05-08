@@ -51,14 +51,14 @@ export default function SlimAtHome() {
               <div className="absolute inset-0 bg-brand-black/20" />
 
               {/* Floating Badge */}
-              <div className="absolute  bottom-6 left-6 shadow-2xl shadow-black bg-[#FFC300] text-brand-black p-6  transition-transform hover:-translate-y-2">
+              <div className="absolute  bottom-6 left-6 shadow-2xl shadow-black bg-brand-orange text-white p-6  transition-transform hover:-translate-y-2">
                 <p className="text-4xl font-black font-playfair mb-1">20K+</p>
                 <p className="text-[10px] font-black uppercase tracking-[0.3em]">Transformations</p>
               </div>
             </div>
 
             {/* Decorative background element */}
-            <div className="absolute -top-10 -left-10 w-40 shadow-2xl shadow-black h-40 bg-[#FFC300]/30 -z-10" />
+            <div className="absolute -top-10 -left-10 w-40 shadow-2xl shadow-black h-40 bg-brand-orange/30 -z-10" />
           </div>
 
           {/* Right Content: Clean Typography & Lists */}
@@ -66,7 +66,7 @@ export default function SlimAtHome() {
 
             <h2 className="text-brand-black mb-6 leading-[1.1] text-5xl font-playfair font-bold">
               No Gym. No Pills.<br />
-              <span className="text-[#FFC300]  font-sans font-normal">Just Real Results.</span>
+              <span className="text-brand-orange font-sans font-normal">Just Real Results.</span>
             </h2>
 
             <p className="text-gray-900 text-sm lg:text-base leading-relaxed mb-8 max-w-xl">
@@ -80,12 +80,9 @@ export default function SlimAtHome() {
                 <div
                   key={i}
                   onClick={() => setActiveIndex(i)}
-                  className={`group flex items-start gap-4 p-4 border transition-all duration-500 cursor-pointer ${i === activeIndex
-                    ? 'border-[#FFC300] bg-brand-light'
-                    : 'border-gray-300 hover:border-[#FFC300]/80'
-                    }`}
+                  className="flex items-center gap-6 p-4 rounded-xl border border-gray-100 hover:border-brand-orange/30 hover:bg-brand-orange/5 transition-all duration-300 cursor-pointer group"
                 >
-                  <div className={`text-4xl font-playfair font-black transition-colors duration-500 ${i === activeIndex ? 'text-[#FFC300]' : 'text-[#FFC300]/20 group-hover:text-[#FFC300]/50'
+                  <div className={`text-4xl font-playfair font-black transition-colors duration-500 ${i === activeIndex ? 'text-brand-orange' : 'text-brand-orange/20 group-hover:text-brand-orange/50'
                     }`}>
                     0{i + 1}
                   </div>
@@ -99,7 +96,7 @@ export default function SlimAtHome() {
 
             <a
               href="#plans"
-              className="ripple-btn group mt-8 rounded-lg inline-flex items-center gap-4 bg-brand-black text-[#FFC300] font-black px-8 py-4  shadow-xl transition-all duration-500 hover:bg-[#FFC300] hover:text-brand-black"
+              className="ripple-btn group mt-8 rounded-lg inline-flex items-center gap-4 bg-brand-black text-brand-orange font-black px-8 py-4  shadow-xl transition-all duration-500 hover:bg-brand-orange hover:text-white"
             >
               Discover the Plan
               <svg className="w-5 h-5 transition-transform duration-500 group-hover:translate-x-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M5 12h14M12 5l7 7-7 7" /></svg>

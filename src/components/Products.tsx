@@ -74,16 +74,16 @@ export default function PremiumProducts() {
             viewport={{ once: true }}
             className="mx-auto mb-10 max-w-4xl text-center"
           >
-            <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-[#d4af37]/60 bg-white/70 px-7 py-2 backdrop-blur-2xl">
-              <Sparkles className="h-5 w-5 text-[#d4af37]" />
-              <span className="text-[11px] font-black uppercase tracking-[0.35em] text-[#c59a25]">
+            <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-brand-teal/60 bg-white/70 px-7 py-2 backdrop-blur-2xl">
+              <Sparkles className="h-5 w-5 text-brand-teal" />
+              <span className="text-[11px] font-black uppercase tracking-[0.35em] text-brand-teal">
                 Premium Herbal Collection
               </span>
             </div>
 
             <h2 className="text-7xl font-serif font-black leading-[0.95] tracking-[-4px] text-[#111]">
               Nature’s Healing
-              <span className="block  font-medium text-[#d4af37]">
+              <span className="block font-medium text-brand-teal">
                 Apothecary
               </span>
             </h2>
@@ -119,7 +119,7 @@ export default function PremiumProducts() {
                   delay: i * 0.12,
                 }}
                 viewport={{ once: true }}
-                className="group relative overflow-hidden  border border-black/20 shadow-xl shadow-black/60 bg-white/90 "
+                className="group relative overflow-hidden border border-black/20 shadow-xl shadow-black/60 bg-white/90"
               >
 
                 {/* SHINE */}
@@ -141,10 +141,10 @@ export default function PremiumProducts() {
                   />
 
                   {/* OVERLAY */}
-                  <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent" />
+                  {/* <div className="absolute inset-0 bg-linear-to-r from-transparent via-brand-teal to-transparent transition-all duration-1500 ease-out" /> */}
 
                   {/* GLOW */}
-                  <div className="absolute bottom-[-70px] left-1/2 h-[140px] w-[220px] -translate-x-1/2 rounded-full bg-[#ffd86b]/40 blur-3xl" />
+                  <div className="absolute bottom-[-70px] left-1/2 h-[140px] w-[220px] -translate-x-1/2 rounded-full bg-brand-teal/40 blur-3xl" />
 
                   {/* TAG */}
                   <div className="absolute left-2 top-2 rounded-xl border border-white/20 bg-white px-5 py-2 text-[10px] font-black uppercase tracking-[0.28em] text-black backdrop-blur-xl">
@@ -163,7 +163,7 @@ export default function PremiumProducts() {
                     href={product.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="absolute bottom-4 right-4 flex h-12 w-12 items-center justify-center rounded-full bg-linear-to-br from-[#ffe08c] to-[#d4af37] text-black shadow-[0_20px_40px_rgba(212,175,55,0.95)]"
+                    className="absolute bottom-4 right-4 flex h-12 w-12 items-center justify-center rounded-full bg-linear-to-br from-brand-teal to-brand-teal/80 text-white shadow-[0_20px_40px_rgba(1,180,189,0.5)]"
                   >
                     <ArrowUpRight className="h-5 w-5" />
                   </motion.a>
@@ -175,16 +175,12 @@ export default function PremiumProducts() {
                   <div className="mb-5 flex items-start justify-between gap-4">
 
                     <div>
-                      <p className="mb-3 text-sm font-black uppercase tracking-widest text-[#d4af37]">
+                      <p className="mb-3 text-sm font-black uppercase tracking-widest text-brand-teal">
                         {product.subtitle}
                       </p>
-
-                      <h3 className="text-2xl font-black leading-none tracking-[-1px] text-[#111] transition-all duration-500 group-hover:text-[#b89025]">
-                        {product.name}
-                      </h3>
                     </div>
 
-                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-linear-to-br from-[#d4af37] to-[#ffe08c] text-sm font-black text-black shadow-xl">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-linear-to-br from-brand-teal to-brand-teal/50 text-sm font-black text-white shadow-xl">
                       100%
                     </div>
                   </div>
@@ -205,7 +201,7 @@ export default function PremiumProducts() {
                       href={product.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[10px] border border-[#b89025] px-3 py-2 rounded-lg font-black uppercase tracking-[0.28em] text-[#b89025] transition-all duration-300 hover:text-black"
+                      className="text-[10px] border border-brand-teal px-3 py-2 rounded-lg font-black uppercase tracking-[0.28em] text-brand-teal transition-all duration-300 hover:text-black"
                     >
                       Inquire Now
                     </a>

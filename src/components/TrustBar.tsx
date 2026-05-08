@@ -19,10 +19,10 @@ export default function TrustBar() {
       <div className="w-full" style={{ height: 'auto' }}>
         <FlowingMenu 
           items={items} 
-          bgColor="#FFC300" 
+          bgColor="var(--color-brand-amber)" 
           textColor="#111" 
           marqueeBgColor="#111" 
-          marqueeTextColor="#FFC300"
+          marqueeTextColor="var(--color-brand-amber)"
           borderColor="rgba(0,0,0,0.1)"
           speed={10}
           autoHoverInterval={4000}

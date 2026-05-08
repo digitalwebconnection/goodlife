@@ -40,10 +40,10 @@ export default function WellnessHeroSection() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2, duration: 0.8 }}
-                            className="mb-6 inline-flex items-center gap-3 rounded-full border border-amber-200 bg-white/80 px-6 py-2.5 shadow-sm backdrop-blur-md"
+                            className="mb-6 inline-flex items-center gap-3 rounded-full border border-brand-amber/20 bg-white/80 px-6 py-2.5 shadow-sm backdrop-blur-md"
                         >
-                            <Sparkles className="h-4 w-4 text-[#FFC300]" />
-                            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-amber-900">
+                            <Sparkles className="h-4 w-4 text-brand-amber" />
+                            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-brand-amber/80">
                                 Premium Naturopathy Care
                             </span>
                         </motion.div>
@@ -56,7 +56,7 @@ export default function WellnessHeroSection() {
                             className="text-8xl font-black leading-[0.9] tracking-tighter text-white"
                         >
                             Transformative <br />
-                            <span className="italic font-serif  text-[#FFC300]">Health Mastery</span>
+                            <span className="italic font-serif  text-brand-amber">Health Mastery</span>
                         </motion.h1>
 
                         {/* DESCRIPTION */}
@@ -84,7 +84,7 @@ export default function WellnessHeroSection() {
                                 href="https://api.whatsapp.com/send?phone=919979740361"
                                 className="group relative overflow-hidden rounded-full bg-neutral-900 px-10 py-3 text-[11px] font-black uppercase tracking-[0.3em] text-white shadow-2xl transition-all"
                             >
-                                <div className="absolute inset-0 origin-left scale-x-0 bg-[#FFC300] transition-transform duration-500 group-hover:scale-x-100" />
+                                <div className="absolute inset-0 origin-left scale-x-0 bg-brand-amber transition-transform duration-500 group-hover:scale-x-100" />
                                 <span className="relative z-10 flex items-center gap-3 group-hover:text-neutral-900 transition-colors duration-500">
                                     Begin Now <ArrowRight className="h-4 w-4" />
                                 </span>
@@ -93,7 +93,7 @@ export default function WellnessHeroSection() {
                             <motion.a
                                 whileHover={{ backgroundColor: 'rgba(255,255,255,1)' }}
                                 href="#plans"
-                                className="rounded-full border border-[#FFC300] bg-white/50 px-10 py-3 text-[11px] font-black uppercase tracking-[0.3em] text-neutral-900 backdrop-blur-md transition-all"
+                                className="rounded-full border border-brand-amber bg-white/50 px-10 py-3 text-[11px] font-black uppercase tracking-[0.3em] text-neutral-900 backdrop-blur-md transition-all"
                             >
                                 View Curated Plans
                             </motion.a>
@@ -112,7 +112,7 @@ export default function WellnessHeroSection() {
                                 { icon: Activity, val: "4.9★", label: "Client Trust" }
                             ].map((stat, i) => (
                                 <div key={i} className="flex items-center gap-4">
-                                    <stat.icon className="h-8 w-8 text-[#FFC300]" />
+                                    <stat.icon className="h-8 w-8 text-brand-lime" />
                                     <div>
                                         <div className="text-xl font-bold text-white leading-none">{stat.val}</div>
                                         <div className="text-[10px] uppercase tracking-widest text-neutral-100 mt-1">{stat.label}</div>
@@ -137,14 +137,14 @@ export default function WellnessHeroSection() {
         .blob1 {
           width: 500px;
           height: 500px;
-          background: #fbbf24;
+          background: var(--color-brand-amber);
           top: -10%;
           left: -10%;
         }
         .blob2 {
           width: 400px;
           height: 400px;
-          background: #fef3c7;
+          background: var(--color-brand-lime);
           bottom: 10%;
           right: 20%;
           animation-delay: -5s;

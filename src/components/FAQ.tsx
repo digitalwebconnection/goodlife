@@ -18,26 +18,26 @@ export default function FAQ() {
             className="text-brand-black font-serif mb-2 leading-tight text-[clamp(2rem,4vw,3rem)]  font-bold"
           >
             Still Curious? Let's <br />
-            <span className="italic font-normal text-[#FFC300]">Clear Your Doubts</span>
+            <span className="italic font-normal text-brand-teal">Clear Your Doubts</span>
           </h2>
-          <div className="w-16 h-[2px] bg-[#FFC300] mx-auto " />
+          <div className="w-16 h-[2px] bg-brand-teal mx-auto " />
         </div>
 
         <div className="border-t border-gray-100">
           {FAQS.map((faq, i) => (
             <div
               key={i}
-              className={` transition-all duration-500 ${open === i ? 'bg-gray-50 border border-[#FFC300]'  : 'bg-white  hover:bg-gray-50/50 border-b border-[#FFC300] '}`}
+              className={` transition-all duration-500 ${open === i ? 'bg-gray-50 border border-brand-teal'  : 'bg-white  hover:bg-gray-50/50 border-b border-brand-teal '}`}
             >
               <button
                 onClick={() => setOpen(open === i ? null : i)}
                 className="w-full flex items-center justify-between px-6 py-6 text-left group"
               >
-                <span className={`font-bold text-base lg:text-lg transition-colors duration-500 ${open === i ? 'text-[#FFC300]' : 'text-brand-black'}`}>
+                <span className={`font-bold text-base lg:text-lg transition-colors duration-500 ${open === i ? 'text-brand-teal' : 'text-brand-black'}`}>
                   {faq.q}
                 </span>
 
-                <div className={`shrink-0 transition-transform duration-500 ${open === i ? 'rotate-45 text-[#FFC300]' : 'text-gray-300 group-hover:text-brand-black'}`}>
+                <div className={`shrink-0 transition-transform duration-500 ${open === i ? 'rotate-45 text-brand-teal' : 'text-gray-300 group-hover:text-brand-black'}`}>
                   <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 5v14M5 12h14" /></svg>
                 </div>
               </button>

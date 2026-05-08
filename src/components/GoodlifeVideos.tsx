@@ -46,7 +46,7 @@ export default function GoodlifeVideos() {
         {/* HEADING */}
         <div className="mx-auto mb-10 max-w-4xl text-center">
 
-          <p className="mb-4 text-[11px] font-black uppercase tracking-[0.35em] text-[#FFC300]">
+          <p className="mb-4 text-[11px] font-black uppercase tracking-[0.35em] text-brand-orange">
             Real Video Stories
           </p>
 
@@ -57,7 +57,7 @@ export default function GoodlifeVideos() {
             className="font-playfair text-6xl font-bold leading-[0.9] tracking-[-3px] text-[#111]"
           >
             What Goodlife
-            <span className="font-normal text-[#FFC300]">
+            <span className="font-normal text-brand-orange">
               {' '}Says
             </span>
           </motion.h2>
@@ -97,12 +97,11 @@ export default function GoodlifeVideos() {
                 />
 
                 {/* OVERLAY */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent" />
 
                 {/* PLAY BUTTON */}
                 <div className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 shadow-2xl backdrop-blur-xl transition-all duration-500 group-hover:scale-110">
-
-                  <Play className="ml-1 h-8 w-8 fill-[#FFC300] text-[#FFC300]" />
+                  <Play className="ml-1 h-8 w-8 fill-brand-orange text-brand-orange" />
                 </div>
 
                 {/* TOP LABEL */}
@@ -114,7 +113,7 @@ export default function GoodlifeVideos() {
               {/* CONTENT */}
               <div className="p-6">
 
-                <h3 className="text-2xl font-black leading-tight tracking-[-1px] text-[#111] transition-colors duration-300 group-hover:text-[#c59a25]">
+                <h3 className="text-2xl font-black leading-tight tracking-[-1px] text-[#111] transition-colors duration-300 group-hover:text-brand-orange">
                   {video.title}
                 </h3>
 
@@ -129,7 +128,7 @@ export default function GoodlifeVideos() {
                     Watch Video
                   </span>
 
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#fff7d8] text-[#FFC300] transition-all duration-300 group-hover:bg-[#FFC300] group-hover:text-white">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-orange/10 text-brand-orange transition-all duration-300 group-hover:bg-brand-orange group-hover:text-white">
                     <Play className="ml-0.5 h-4 w-4 fill-current" />
                   </div>
                 </div>
