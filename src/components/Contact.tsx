@@ -30,11 +30,11 @@ export default function Contact() {
                 </p>
               </div>
 
-              <h2 className="mb-6 font-playfair text-[clamp(2.5rem,5vw,4rem)] font-bold leading-[1.05] text-[#191919]">
+              <h2 className="mb-6 font-serif text-[clamp(2.5rem,5vw,4rem)] font-bold leading-[1.05] text-[#191919]">
                 Ready for a <br className="hidden lg:block" />
                 <span className="relative">
                   healthier
-                  <span className="absolute bottom-1 left-0 w-full h-3 bg-brand-orange/30 -z-10 skew-x-12" />
+                  <span className="absolute bottom-1 left-0 w-full h-3 bg-brand-orange/80 -z-10 skew-x-12" />
                 </span> routine?
               </h2>
 

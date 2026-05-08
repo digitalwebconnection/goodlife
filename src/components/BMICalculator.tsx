@@ -94,7 +94,7 @@ export default function BMICalculator() {
 
         {/* TOP TITLE */}
         <div className="mb-8 text-center">
-          <h1 className="title-main">
+          <h1 className="title-main font-serif">
             KNOW YOUR <br /> <span>Body – TRY OUR FREE HEALTH TOOL</span>
           </h1>
         </div>

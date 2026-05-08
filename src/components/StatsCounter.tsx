@@ -59,7 +59,7 @@ export default function StatsCounter() {
           <h2
             data-aos="fade-up"
             data-aos-delay="100"
-            className="text-brand-black text-3xl sm:text-4xl lg:text-5xl font-playfair font-bold leading-tight"
+            className="text-brand-black text-3xl sm:text-4xl lg:text-5xl font-serif font-bold leading-tight"
           >
             Numbers That Speak <br />
             <span className="text-brand-teal font-semibold">For Themselves</span>

@@ -97,6 +97,7 @@ export default function HealthChallenges() {
       text-[#111] 
       max-w-4xl 
       mx-auto
+      font-serif
       drop-shadow-[0_8px_25px_rgba(0,0,0,0.18)]
     "
           >

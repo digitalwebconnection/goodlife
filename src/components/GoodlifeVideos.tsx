@@ -54,7 +54,7 @@ export default function GoodlifeVideos() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-playfair text-6xl font-bold leading-[0.9] tracking-[-3px] text-[#111]"
+            className="font-serif text-6xl font-bold leading-[0.9] tracking-[-3px] text-[#111]"
           >
             What Goodlife
             <span className="font-normal text-brand-orange">

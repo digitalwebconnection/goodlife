@@ -64,7 +64,7 @@ export default function SlimAtHome() {
           {/* Right Content: Clean Typography & Lists */}
           <div className="lg:col-span-6" data-aos="fade-left">
 
-            <h2 className="text-brand-black mb-6 leading-[1.1] text-5xl font-playfair font-bold">
+            <h2 className="text-brand-black  mb-6 leading-[1.1] text-5xl font-serif font-bold">
               No Gym. No Pills.<br />
               <span className="text-brand-orange font-sans font-normal">Just Real Results.</span>
             </h2>

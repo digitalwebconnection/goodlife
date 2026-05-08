@@ -18,7 +18,7 @@ export default function FAQ() {
             className="text-brand-black font-serif mb-2 leading-tight text-[clamp(2rem,4vw,3rem)]  font-bold"
           >
             Still Curious? Let's <br />
-            <span className="italic font-normal text-brand-teal">Clear Your Doubts</span>
+            <span className="font-normal text-brand-teal">Clear Your Doubts</span>
           </h2>
           <div className="w-16 h-[2px] bg-brand-teal mx-auto " />
         </div>

@@ -53,10 +53,10 @@ export default function WellnessHeroSection() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4, duration: 1 }}
-                            className="text-8xl font-black leading-[0.9] tracking-tighter text-white"
+                            className="text-8xl font-black font-serif leading-[0.9] tracking-tighter text-white"
                         >
                             Transformative <br />
-                            <span className="italic font-serif  text-brand-amber">Health Mastery</span>
+                            <span className=" font-serif  text-brand-amber">Health Mastery</span>
                         </motion.h1>
 
                         {/* DESCRIPTION */}

@@ -64,9 +64,9 @@ export default function PremiumTestimonials() {
             <div className="flex items-center gap-3 text-brand-teal font-bold tracking-[0.2em] text-[10px] lg:text-xs uppercase mb-6">
               Voice of the People
             </div>
-            <h2 className="text-3xl font-bold lg:text-6xl font-playfair text-brand-black leading-[1.1] max-w-3xl">
+            <h2 className="text-3xl font-serif font-bold lg:text-6xl  text-brand-black leading-[1.1] max-w-3xl">
               Healing through
-              <span className="italic text-brand-orange block sm:inline lg:ml-3"> Nature&apos;s Wisdom.</span>
+              <span className="  text-brand-orange block sm:inline lg:ml-3"> Nature&apos;s Wisdom.</span>
             </h2>
           </div>
 

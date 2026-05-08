@@ -67,7 +67,7 @@ export default function About() {
               </p>
             </div>
 
-            <h2 className="text-brand-black mb-8 leading-[1.1] text-[clamp(2.2rem,5vw,3.5rem)] font-playfair font-bold">
+            <h2 className="text-brand-black mb-8 leading-[1.1] font-serif text-5xl  font-bold">
               18+ Years of <br />
               <span className="text-brand-teal">Natural Healing</span> Mastery
             </h2>
