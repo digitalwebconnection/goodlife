@@ -182,3 +182,33 @@
     border-right-color: var(--border);
   }
 }
+
+
+
+/* Add to your Folder.css */
+.cinematic-container {
+  perspective: 1200px;
+  background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #000000 100%);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glow-line {
+  background: linear-gradient(90deg, transparent, #FFC300, transparent);
+  height: 1px;
+  width: 100%;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}

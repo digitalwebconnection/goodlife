@@ -38,7 +38,7 @@ export default function SlimAtHome() {
 
           {/* Left Visual: Sharp & Clean Image */}
           <div className="lg:col-span-6 relative" data-aos="fade-right">
-            <div className="relative aspect-square overflow-hidden shadow-2xl">
+            <div className="relative aspect-square overflow-hidden shadow-2xl  shadow-black">
               {BENEFITS.map((benefit, idx) => (
                 <img
                   key={idx}
@@ -51,25 +51,25 @@ export default function SlimAtHome() {
               <div className="absolute inset-0 bg-brand-black/20" />
 
               {/* Floating Badge */}
-              <div className="absolute bottom-10 left-10 bg-brand-yellow text-brand-black p-8 shadow-2xl transition-transform hover:-translate-y-2">
+              <div className="absolute  bottom-6 left-6 shadow-2xl shadow-black bg-[#FFC300] text-brand-black p-6  transition-transform hover:-translate-y-2">
                 <p className="text-4xl font-black font-playfair mb-1">20K+</p>
                 <p className="text-[10px] font-black uppercase tracking-[0.3em]">Transformations</p>
               </div>
             </div>
 
             {/* Decorative background element */}
-            <div className="absolute -top-10 -left-10 w-40 h-40 bg-brand-yellow/10 -z-10" />
+            <div className="absolute -top-10 -left-10 w-40 shadow-2xl shadow-black h-40 bg-[#FFC300]/30 -z-10" />
           </div>
 
           {/* Right Content: Clean Typography & Lists */}
           <div className="lg:col-span-6" data-aos="fade-left">
 
-            <h2 className="text-brand-black mb-6 leading-[1.1] text-[32px] font-playfair font-bold">
+            <h2 className="text-brand-black mb-6 leading-[1.1] text-5xl font-playfair font-bold">
               No Gym. No Pills.<br />
-              <span className="text-brand-yellow italic font-normal">Just Real Results.</span>
+              <span className="text-[#FFC300]  font-sans font-normal">Just Real Results.</span>
             </h2>
 
-            <p className="text-gray-600 text-sm lg:text-base leading-relaxed mb-8 max-w-xl">
+            <p className="text-gray-900 text-sm lg:text-base leading-relaxed mb-8 max-w-xl">
               Discover a powerful yet simple way to lose weight naturally from your kitchen.
               No expensive memberships — just nature's wisdom guided by 18+ years of expertise.
             </p>
@@ -81,11 +81,11 @@ export default function SlimAtHome() {
                   key={i}
                   onClick={() => setActiveIndex(i)}
                   className={`group flex items-start gap-4 p-4 border transition-all duration-500 cursor-pointer ${i === activeIndex
-                      ? 'border-brand-yellow bg-brand-light'
-                      : 'border-gray-100 hover:border-brand-yellow/50'
+                    ? 'border-[#FFC300] bg-brand-light'
+                    : 'border-gray-300 hover:border-[#FFC300]/80'
                     }`}
                 >
-                  <div className={`text-4xl font-playfair font-black transition-colors duration-500 ${i === activeIndex ? 'text-brand-yellow' : 'text-brand-yellow/20 group-hover:text-brand-yellow/50'
+                  <div className={`text-4xl font-playfair font-black transition-colors duration-500 ${i === activeIndex ? 'text-[#FFC300]' : 'text-[#FFC300]/20 group-hover:text-[#FFC300]/50'
                     }`}>
                     0{i + 1}
                   </div>
@@ -99,7 +99,7 @@ export default function SlimAtHome() {
 
             <a
               href="#plans"
-              className="ripple-btn group mt-8 inline-flex items-center gap-4 bg-brand-black text-brand-yellow font-black px-8 py-4 rounded-none shadow-xl transition-all duration-500 hover:bg-brand-yellow hover:text-brand-black"
+              className="ripple-btn group mt-8 rounded-lg inline-flex items-center gap-4 bg-brand-black text-[#FFC300] font-black px-8 py-4  shadow-xl transition-all duration-500 hover:bg-[#FFC300] hover:text-brand-black"
             >
               Discover the Plan
               <svg className="w-5 h-5 transition-transform duration-500 group-hover:translate-x-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M5 12h14M12 5l7 7-7 7" /></svg>

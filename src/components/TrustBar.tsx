@@ -1,40 +1,74 @@
+import FlowingMenu from './FlowingMenu';
+
 const TRUST_ITEMS = [
-  '20,000+ Transformations',
-  '18+ Years Expert Healing',
-  '4.9/5 Google Rating',
-  '100% Natural — No Pills',
-  'Wellness Awards Winner',
-  'Specialized Programs',
-  'Home-Based — No Gym',
+  { text: '20,000+ Transformations', image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=400' },
+  { text: '18+ Years Expert Healing', image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=400' },
+  { text: '4.9/5 Google Rating', image: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&q=80&w=400' },
+  { text: '100% Natural — No Pills', image: 'https://images.unsplash.com/photo-1540331547168-8b63109225b7?auto=format&fit=crop&q=80&w=400' },
+  { text: 'Wellness Awards Winner', image: 'https://images.unsplash.com/photo-1518173946687-a4c8a9833d8e?auto=format&fit=crop&q=80&w=400' },
 ];
 
 export default function TrustBar() {
-  const items = [...TRUST_ITEMS, ...TRUST_ITEMS, ...TRUST_ITEMS]; 
+  const items = TRUST_ITEMS.map(item => ({
+    ...item,
+    link: '#trust'
+  }));
 
   return (
-    <section id="trust" className="overflow-hidden py-4 bg-brand-yellow relative z-20">
-      <div className="absolute inset-0 bg-white/10 pointer-events-none" />
-      <div className="marquee-track flex items-center">
-        {items.map((item, i) => (
-          <div key={i} className="flex items-center gap-12 px-12 group">
-            <div className="flex items-center gap-4">
-              <div className="w-8 h-8 rounded-full bg-brand-black/10 flex items-center justify-center text-brand-black transition-all duration-700 group-hover:bg-brand-black group-hover:text-brand-yellow group-hover:scale-110">
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </div>
-              <span className="text-brand-black/80 text-[10px] font-black uppercase tracking-[0.3em] whitespace-nowrap transition-colors group-hover:text-brand-black">
-                {item}
-              </span>
-            </div>
-            
-            {/* Separator */}
-            <div className="flex items-center opacity-20 group-hover:opacity-100 transition-opacity duration-700 scale-75 group-hover:scale-100">
-              <div className="w-1.5 h-1.5 rounded-full bg-brand-black" />
-            </div>
-          </div>
-        ))}
+    <section id="trust" className="relative z-20 border-y border-black/10">
+      <div className="w-full" style={{ height: 'auto' }}>
+        <FlowingMenu 
+          items={items} 
+          bgColor="#FFC300" 
+          textColor="#111" 
+          marqueeBgColor="#111" 
+          marqueeTextColor="#FFC300"
+          borderColor="rgba(0,0,0,0.1)"
+          speed={10}
+          autoHoverInterval={4000}
+          isGrid={true}
+        />
       </div>
+      
+      <style>{`
+        .menu-grid {
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+        }
+        
+        @media (max-width: 1024px) {
+          .menu-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        
+        @media (max-width: 640px) {
+          .menu-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        .menu__item {
+           border-top: none !important;
+           border-right: 1px solid rgba(0,0,0,0.1);
+           border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .menu__item:nth-child(4n) {
+          border-right: none;
+        }
+
+        .menu__item-link {
+          font-size: 14px !important;
+          font-weight: 800 !important;
+          letter-spacing: 1px;
+        }
+
+        .marquee span {
+          font-size: 14px !important;
+          font-weight: 800 !important;
+        }
+      `}</style>
     </section>
   );
 }

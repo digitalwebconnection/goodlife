@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
- 
+
 const TESTIMONIALS = [
   {
     name: 'Mrs. Rekha Sharma',
@@ -23,7 +23,7 @@ const TESTIMONIALS = [
     tag: 'PCOS Management'
   },
 ];
- 
+
 
 const QuoteIcon = () => (
   <svg className="w-14 h-14 text-green-100" viewBox="0 0 24 24" fill="currentColor">
@@ -42,34 +42,34 @@ const MapPinIcon = () => (
     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" />
   </svg>
 );
- 
+
 export default function PremiumTestimonials() {
   const [active, setActive] = useState(0);
- 
+
   useEffect(() => {
     const timer = setInterval(() => {
       setActive(prev => (prev + 1) % TESTIMONIALS.length);
     }, 8000);
     return () => clearInterval(timer);
   }, []);
- 
+
   return (
     <section className="relative py-12 lg:py-18 bg-[#FDFCF8] overflow-hidden">
       <div className="absolute top-0 right-0 w-1/3 h-full bg-green-50/50 skew-x-12 translate-x-20 z-0" />
       <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-amber-50 rounded-full blur-3xl opacity-60" />
- 
+
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col items-center text-center mb-20" data-aos="fade-up">
-            <div className="flex items-center gap-3 text-brand-yellow font-bold tracking-[0.2em] text-[10px] lg:text-xs uppercase mb-6">    
+            <div className="flex items-center gap-3 text-[#FFC300] font-bold tracking-[0.2em] text-[10px] lg:text-xs uppercase mb-6">
               Voice of the People
             </div>
             <h2 className="text-3xl font-bold lg:text-6xl font-playfair text-brand-black leading-[1.1] max-w-3xl">
               Healing through
-              <span className="italic text-brand-yellow block sm:inline lg:ml-3"> Nature&apos;s Wisdom.</span>
+              <span className="italic text-[#FFC300] block sm:inline lg:ml-3"> Nature&apos;s Wisdom.</span>
             </h2>
           </div>
- 
+
           <div className="relative min-h-[450px] grid lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7">
               <div className="space-y-8">
@@ -77,7 +77,7 @@ export default function PremiumTestimonials() {
                 <p className="text-2xl lg:text-4xl font-medium text-slate-800 leading-snug italic font-serif">
                   "{TESTIMONIALS[active].text}"
                 </p>
- 
+
                 <div className="flex items-center gap-4 pt-6">
                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-800 to-green-950 flex items-center justify-center text-white text-xl font-serif shadow-lg">
                     {TESTIMONIALS[active].name.charAt(0)}
@@ -94,7 +94,7 @@ export default function PremiumTestimonials() {
                 </div>
               </div>
             </div>
- 
+
             <div className="lg:col-span-5 relative">
               <div className="relative aspect-square max-w-sm mx-auto">
                 <svg className="absolute inset-0 w-full h-full -rotate-90">
@@ -111,29 +111,28 @@ export default function PremiumTestimonials() {
                     strokeDashoffset={100 - ((active + 1) / TESTIMONIALS.length) * 100}
                   />
                 </svg>
- 
+
                 <div className="absolute inset-4 rounded-full bg-white shadow-2xl overflow-hidden border-8 border-[#FDFCF8]">
                   <img
                     src={TESTIMONIALS[active].image}
                     alt={TESTIMONIALS[active].name}
                     className="w-full h-full object-cover"
                   />
- 
+
                   <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full border border-green-100 flex items-center gap-2 shadow-lg">
                     <ShieldIcon />
                     <span className="text-[10px] font-bold text-slate-900 uppercase tracking-widest whitespace-nowrap">Verified Plan</span>
                   </div>
                 </div>
               </div>
- 
+
               <div className="flex justify-center mt-12 gap-3">
                 {TESTIMONIALS.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => setActive(i)}
-                    className={`h-2 rounded-full transition-all duration-500 ${
-                      active === i ? 'w-12 bg-green-800' : 'w-2 bg-slate-200'
-                    }`}
+                    className={`h-2 rounded-full transition-all duration-500 ${active === i ? 'w-12 bg-green-800' : 'w-2 bg-slate-200'
+                      }`}
                   />
                 ))}
               </div>
@@ -144,5 +143,4 @@ export default function PremiumTestimonials() {
     </section>
   );
 }
- 
- 
+

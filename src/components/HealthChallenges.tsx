@@ -1,119 +1,383 @@
 import { useRef } from 'react';
+import { motion } from 'framer-motion';
 import { ParticleCard, GlobalSpotlight } from './MagicBento';
 
 const CHALLENGES = [
-  { 
-    title: 'Struggling With Weight Gain?', 
-    desc: 'Break the cycle of fad diets and intense gym pressure. Reclaim your health naturally with sustainable home-based protocols.', 
-    color: 'from-brand-yellow to-brand-yellow/60',
+  {
+    title: 'Weight Gain Issues',
+    desc: 'No more crash diets or exhausting gym routines. Heal your body naturally with sustainable wellness methods.',
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M18 20a6 6 0 0 0-12 0" /><circle cx="12" cy="10" r="4" /><rect width="18" height="18" x="3" y="3" rx="2" />
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+        <path d="M18 20a6 6 0 0 0-12 0" />
+        <circle cx="12" cy="10" r="4" />
       </svg>
-    )
+    ),
   },
-  { 
-    title: 'Managing Diabetes or PCOS?', 
-    desc: 'Target the root cause of lifestyle diseases. Our naturopathy programs are specifically calibrated for hormonal and metabolic balance.', 
-    color: 'from-brand-yellow to-brand-yellow/80',
+  {
+    title: 'Diabetes & PCOS',
+    desc: 'Balance hormones and improve metabolic health with customized naturopathy-based healing programs.',
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.505 4.044 3 5.5L12 21l7-7Z" />
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+        <path d="M12 21s-7-4.35-7-11a4 4 0 0 1 7-2.65A4 4 0 0 1 19 10c0 6.65-7 11-7 11Z" />
       </svg>
-    )
+    ),
   },
-  { 
-    title: 'Want to Detox & Reboot?', 
-    desc: 'Flush toxins and revitalize your system using the medicine cabinet in your kitchen. Pure, effective, and 100% natural.', 
-    color: 'from-brand-yellow to-brand-yellow/50',
+  {
+    title: 'Body Detox',
+    desc: 'Cleanse toxins naturally and recharge your energy through powerful food-based healing therapies.',
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+        <path d="m12 3-2.5 6.5L3 12l6.5 2.5L12 21l2.5-6.5L21 12l-6.5-2.5Z" />
       </svg>
-    )
+    ),
   },
-  { 
-    title: 'Need Expert Guidance?', 
-    desc: "Stop guessing and start healing. Get 1-on-1 coaching from health experts with 18+ years of dedicated naturopathic experience.", 
-    color: 'from-brand-yellow to-brand-yellow/90',
+  {
+    title: 'Expert Consultation',
+    desc: 'Get personalized 1-on-1 guidance from experienced naturopathy experts focused on long-term healing.',
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10" /><path d="m16.24 7.76-2.12 8.48-8.48 2.12 2.12-8.48 8.48-2.12Z" />
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 8v4l3 3" />
       </svg>
-    )
+    ),
   },
 ];
 
 export default function HealthChallenges() {
   const gridRef = useRef<HTMLDivElement>(null);
-  
+
   return (
-    <section id="challenges" className="py-12 bg-off-white overflow-hidden bento-section">
-      <GlobalSpotlight 
-        gridRef={gridRef} 
-        glowColor="255, 193, 7" 
-        spotlightRadius={400}
+    <section className="relative py-14 overflow-hidden bg-[#fffdf7]">
+      {/* Background Glow */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#FFC300]/10 blur-[140px] rounded-full" />
+      </div>
+
+      <GlobalSpotlight
+        gridRef={gridRef}
+        glowColor="255, 195, 0"
+        spotlightRadius={350}
       />
-      <div className="container-custom">
-        <div className="text-center mb-16">
-          <p 
-            data-aos="fade-down"
-            className="inline-block px-4 py-1 rounded-full bg-brand-light text-brand-black font-black text-[9px] uppercase tracking-[0.3em] mb-4 border border-brand-black/10 shadow-sm"
-          >
-            🌱 Start Your Journey
-          </p>
-          <h2 
-            data-aos="fade-up"
-            data-aos-delay="100"
-            className="text-brand-black mb-4 leading-tight max-w-xl mx-auto text-[clamp(1.5rem,4vw,2.5rem)] font-playfair font-bold"
-          >
-            Your Journey to Better Health <span className="italic font-normal text-brand-yellow">Starts Here</span>
-          </h2>
-          <div data-aos="zoom-in" data-aos-delay="200" className="w-16 h-1 bg-brand-yellow mx-auto rounded-full opacity-40" />
-        </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8" ref={gridRef}>
-          {CHALLENGES.map((c, i) => (
-            <ParticleCard 
-              key={c.title} 
-              data-aos="fade-up"
-              data-aos-delay={200 + i * 150}
-              className="magic-bento-card magic-bento-card--border-glow group relative bg-white rounded-none p-6 lg:p-8 shadow-sm border border-gray-100 transition-all duration-700 hover:shadow-xl hover:border-brand-yellow/20"
-              enableTilt={true}
-              enableMagnetism={true}
-              clickEffect={true}
-              glowColor="255, 193, 7"
-              particleCount={8}
+      <div className="container-custom relative z-10">
+        {/* Heading */}
+        <motion.div
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  viewport={{ once: true }}
+  className="text-center mb-10"
+>
+  <span className="
+    inline-flex 
+    items-center 
+    gap-2 
+    px-5 
+    py-2 
+    rounded-full 
+    bg-[#FFC300]/10 
+    border 
+    border-[#FFC300]/20 
+    text-[#B8860B] 
+    text-xs 
+    font-bold 
+    tracking-[0.25em] 
+    uppercase
+    shadow-[0_4px_20px_rgba(255,195,0,0.25)]
+  ">
+    ✨ Natural Healing
+  </span>
+
+  <h2
+    className="
+      mt-6 
+      text-[clamp(2rem,5vw,4rem)] 
+      leading-tight 
+      font-black 
+      text-[#111] 
+      max-w-4xl 
+      mx-auto
+      drop-shadow-[0_8px_25px_rgba(0,0,0,0.18)]
+    "
+  >
+    Transform Your Health <br />
+
+    <span
+      className="
+        text-[#FFC300]
+        font-semibold
+
+        drop-shadow-[0_6px_18px_rgba(255,255,255,0.85)]
+      "
+    >
+      The Natural Way
+    </span>
+  </h2>
+
+  <p
+    className="
+      max-w-4xl 
+      mx-auto 
+      mt-4 
+      text-gray-500 
+      leading-relaxed 
+      text-base 
+      md:text-lg
+      drop-shadow-[0_2px_10px_rgba(0,0,0,0.08)]
+    "
+  >
+    Discover personalized naturopathy solutions designed to heal your
+    body, restore energy, and improve long-term wellness naturally.
+  </p>
+</motion.div>
+
+        {/* Cards */}
+        <div
+          ref={gridRef}
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8"
+        >
+          {CHALLENGES.map((item, i) => (
+            <motion.div
+              key={item.title}
+              initial={{ opacity: 0, y: 80 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.7,
+                delay: i * 0.15,
+              }}
+              viewport={{ once: true }}
             >
-              {/* Colored header strip */}
-              <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${c.color} opacity-80`} />
-              
-              <div className="w-16 h-16 rounded-none bg-brand-light flex items-center justify-center text-brand-black transition-all duration-700 group-hover:bg-brand-black group-hover:text-brand-yellow group-hover:shadow-2xl group-hover:shadow-brand-yellow/30 group-hover:-rotate-6 group-hover:rotate-360 relative z-20">
-                <div className="w-8 h-8">
-                  {c.icon}
-                </div>
-              </div>
-
-              <h3 className="font-playfair font-bold text-brand-black text-xl lg:text-2xl mt-8 mb-4 leading-tight relative z-20">
-                {c.title}
-              </h3>
-              
-              <p className="text-gray-500 text-sm leading-relaxed mb-8 relative z-20">
-                {c.desc}
-              </p>
-
-              <a 
-                href="#contact" 
-                className="relative inline-flex items-center gap-2 text-brand-black font-black text-xs uppercase tracking-widest group/btn py-1 z-20"
+              <ParticleCard
+                enableTilt
+                enableMagnetism
+                clickEffect
+                particleCount={14}
+                glowColor="255,195,0"
+                className="
+    group
+    relative
+    overflow-hidden
+    rounded-lg
+    border
+    border-white/20
+    bg-white/10
+    backdrop-blur-2xl
+    p-6
+    h-full
+    transition-all
+    duration-700
+    hover:-translate-y-4
+    hover:scale-[1.02]
+    shadow-[0_10px_60px_rgba(0,0,0,0.08)]
+    hover:shadow-[0_25px_120px_rgba(255,195,0,0.18)]
+  "
               >
-                Read More
-                <svg className="w-4 h-4 transition-transform duration-500 group-hover/btn:translate-x-1 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-yellow transition-all duration-500 group-hover/btn:w-full" />
-              </a>
+                {/* Animated Aurora Background */}
+                <motion.div
+                  animate={{
+                    backgroundPosition: [
+                      '0% 50%',
+                      '100% 50%',
+                      '0% 50%',
+                    ],
+                  }}
+                  transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: 'linear',
+                  }}
+                  className="
+      absolute
+      inset-0
+      opacity-80
+      bg-size-[300%_300%]
+        bg-linear-to-br
+      from-[#fff6d6]
+      via-[#ffe38a]
+      to-[#fff9eb]
+    "
+                />
 
-              {/* Subtle hover glow */}
-              <div className="absolute inset-0 rounded-none opacity-0 group-hover:opacity-100 transition-opacity duration-700 shadow-[0_30px_100px_rgba(255,193,7,0.15)] pointer-events-none" />
-            </ParticleCard>
+                {/* Mesh Glow */}
+                <motion.div
+                  animate={{
+                    x: [0, 40, 0],
+                    y: [0, -30, 0],
+                    scale: [1, 1.2, 1],
+                  }}
+                  transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
+                  className="
+      absolute
+      -top-24
+      -right-24
+      w-72
+      h-72
+      rounded-full
+      bg-[#FFC300]/30
+      blur-[90px]
+    "
+                />
+
+                <motion.div
+                  animate={{
+                    x: [0, -30, 0],
+                    y: [0, 20, 0],
+                    scale: [1, 1.1, 1],
+                  }}
+                  transition={{
+                    duration: 7,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
+                  className="
+      absolute
+      -bottom-20
+      -left-20
+      w-60
+      h-60
+      rounded-full
+      bg-orange-300/20
+      blur-[80px]
+    "
+                />
+
+                {/* Rotating Beam */}
+                <motion.div
+                  animate={{
+                    rotate: [0, 360],
+                  }}
+                  transition={{
+                    duration: 12,
+                    repeat: Infinity,
+                    ease: 'linear',
+                  }}
+                  className="
+      absolute
+      top-1/2
+      left-1/2
+      w-[140%]
+      h-[140%]
+      opacity-20
+      -translate-x-1/2
+      -translate-y-1/2
+      bg-linear-to-r
+      from-transparent
+      via-white
+      to-transparent
+    "
+                  style={{
+                    clipPath: 'polygon(48% 0%, 52% 0%, 100% 100%, 0% 100%)',
+                  }}
+                />
+
+                {/* Noise Overlay */}
+                <div
+                  className="
+      absolute
+      inset-0
+      opacity-[0.03]
+      mix-blend-overlay
+      bg-[url('/noise.png')]
+    "
+                />
+
+                {/* Content */}
+                <motion.div
+                  animate={{
+                    y: [0, -6, 0],
+                  }}
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
+                  className="relative z-10"
+                >
+                  {/* Icon */}
+                  <motion.div
+                    whileHover={{
+                      rotate: 12,
+                      scale: 1.12,
+                    }}
+                    transition={{
+                      type: 'spring',
+                      stiffness: 300,
+                    }}
+                    className="
+        w-16
+        h-16
+        rounded-2xl
+        bg-black
+        text-[#FFC300]
+        flex
+        items-center
+        justify-center
+        shadow-[0_15px_40px_rgba(0,0,0,0.15)]
+      "
+                  >
+                    <div className="w-8 h-8">
+                      {item.icon}
+                    </div>
+                  </motion.div>
+
+                  {/* Title */}
+                  <h3 className="mt-8 text-2xl font-black text-[#111] leading-snug">
+                    {item.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="mt-4 text-gray-700 text-sm leading-relaxed">
+                    {item.desc}
+                  </p>
+
+                  {/* CTA */}
+                  <motion.a
+                    whileHover={{ x: 4 }}
+                    href="#contact"
+                    className="
+        inline-flex
+        items-center
+        gap-2
+        mt-8
+        font-bold
+        uppercase
+        tracking-widest
+        text-sm
+        text-black
+      "
+                  >
+                    Explore More
+
+                    <svg
+                      className="w-4 h-4"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                    >
+                      <path d="M5 12h14" />
+                      <path d="m13 5 7 7-7 7" />
+                    </svg>
+                  </motion.a>
+                </motion.div>
+
+                {/* Border Glow */}
+                <div
+                  className="
+      absolute
+      inset-0
+      rounded-[34px]
+      border
+      border-white/30
+      pointer-events-none
+    "
+                />
+              </ParticleCard>
+            </motion.div>
           ))}
         </div>
       </div>

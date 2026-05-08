@@ -5,7 +5,7 @@ const POSTS = [
     category: "Natural Healing",
     date: "May 10, 2024",
     id: "blog-1",
-    color: "from-brand-light to-brand-yellow/10"
+    color: "from-brand-light to-[#FFC300]/10"
   },
   {
     title: "Why Gym Isn't Mandatory for Weight Loss",
@@ -13,7 +13,7 @@ const POSTS = [
     category: "Weight Loss",
     date: "May 05, 2024",
     id: "blog-2",
-    color: "from-brand-light to-brand-yellow/20"
+    color: "from-brand-light to-[#FFC300]/20"
   },
   {
     title: "Managing PCOS with Naturopathy",
@@ -21,7 +21,7 @@ const POSTS = [
     category: "Metabolic Health",
     date: "April 28, 2024",
     id: "blog-3",
-    color: "from-brand-light to-brand-yellow/30"
+    color: "from-brand-light to-[#FFC300]/30"
   }
 ];
 
@@ -31,19 +31,19 @@ export default function BlogPosts() {
       <div className="container-custom">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-10">
           <div className="max-w-2xl">
-            <p 
+            <p
               data-aos="fade-down"
               className="inline-block px-5 py-2 rounded-full bg-brand-light text-brand-black font-black text-[10px] uppercase tracking-[0.3em] mb-6 shadow-sm border border-brand-black/10"
             >
               📖 Health Insights
             </p>
-            <h2 
+            <h2
               data-aos="fade-up"
               data-aos-delay="100"
               className="text-brand-black leading-[1.1] text-[clamp(2.5rem,5vw,4rem)] font-playfair font-bold"
             >
               Expert Tips for a <br />
-              <span className="italic font-normal text-brand-yellow">Healthy Lifestyle</span>
+              <span className="italic font-normal text-[#FFC300]">Healthy Lifestyle</span>
             </h2>
           </div>
           <a
@@ -53,7 +53,7 @@ export default function BlogPosts() {
             className="flex items-center gap-3 text-brand-black font-black text-xs uppercase tracking-[0.2em] group"
           >
             Read All Articles
-            <svg className="w-5 h-5 transition-transform duration-500 group-hover:translate-x-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <svg className="w-5 h-5 transition-transform duration-500 group-hover:translate-x-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
           </a>
         </div>
 
@@ -70,7 +70,7 @@ export default function BlogPosts() {
                 <div className="absolute inset-0 flex items-center justify-center opacity-10 group-hover:opacity-20 transition-opacity duration-700">
                   <svg className="w-40 h-40" viewBox="0 0 100 100" fill="currentColor"><path d="M50 10 L60 40 L90 50 L60 60 L50 90 L40 60 L10 50 L40 40 Z" /></svg>
                 </div>
-                
+
                 <div className="absolute top-8 left-8">
                   <span className="bg-white/90 backdrop-blur-md px-5 py-2 rounded-full text-[9px] font-black uppercase tracking-widest text-brand-black shadow-sm border border-white/50">
                     {post.category}
@@ -79,22 +79,22 @@ export default function BlogPosts() {
 
                 {/* Read more indicator */}
                 <div className="absolute bottom-8 right-8 w-14 h-14 rounded-full bg-white flex items-center justify-center text-brand-black opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700 shadow-2xl">
-                  <svg className="w-6 h-6 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  <svg className="w-6 h-6 text-[#FFC300]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
                 </div>
               </div>
 
               <div className="px-4">
                 <p className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-4">{post.date}</p>
-                <h3 className="text-2xl lg:text-3xl font-black text-brand-black mb-6 leading-tight font-playfair group-hover:text-brand-yellow transition-colors">
+                <h3 className="text-2xl lg:text-3xl font-black text-brand-black mb-6 leading-tight font-playfair group-hover:text-[#FFC300] transition-colors">
                   {post.title}
                 </h3>
                 <p className="text-gray-500 text-base leading-relaxed mb-8 line-clamp-2 font-medium">
                   {post.excerpt}
                 </p>
-                
+
                 <div className="flex items-center gap-4 text-brand-black font-black text-[10px] uppercase tracking-[0.25em] relative w-fit group/btn py-2">
                   Read Full Article
-                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-yellow transition-all duration-500 group-hover/btn:w-full" />
+                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FFC300] transition-all duration-500 group-hover/btn:w-full" />
                 </div>
               </div>
             </article>

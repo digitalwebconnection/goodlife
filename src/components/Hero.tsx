@@ -1,15 +1,18 @@
 import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+
 
 const HERO_IMAGES = [
-  "https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=2040&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=2040&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=2040&auto=format&fit=crop"
+    "https://blog.nasm.org/hubfs/lose-water-weight.jpg" ,
+  "https://i.ytimg.com/vi/MGx82dfjs9I/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBJBAeWbn-C8B247irxarx3vHtXmw", // Healthy food/transformation
+  "https://images.moneycontrol.com/static-mcnews/2026/04/20260429041104_Mridul-Arora-weight-loss-journey.jpg?impolicy=website&width=1600&height=900", // Fitness/Yoga wellness
+ // Nature/Meditation
 ];
 
 const STATS = [
-  { value: '4.9/5', label: 'Google Rating', id: 'stat-1' },
-  { value: '100%', label: 'Natural — No Pills', id: 'stat-2' },
-  { value: 'Wellness', label: 'Awards Winner', id: 'stat-3' },
+  { value: '4.9/5', label: 'Google Rating' },
+  { value: '100%', label: 'Natural Flow' },
+  { value: 'Award', label: 'Winner 2024' },
 ];
 
 export default function Hero() {
@@ -18,115 +21,124 @@ export default function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % HERO_IMAGES.length);
-    }, 5000);
+    }, 6000); // Slightly longer for the cross-fade effect
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section
-      id="hero"
-      className="relative w-full h-screen flex items-center pt-24 pb-12 overflow-hidden bg-brand-black"
-    >
-      {/* Background Carousel */}
-      <div className="absolute inset-0 z-0 w-full h-full">
-        {HERO_IMAGES.map((img, index) => (
-          <div
-            key={img}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              index === activeIndex ? 'opacity-100' : 'opacity-0'
-            }`}
+    <section id="hero" className="relative w-full h-screen min-h-[700px] flex items-center overflow-hidden bg-black">
+
+      {/* BACKGROUND LAYER: Cross-Fade & Ken Burns */}
+      <div className="absolute inset-0 z-0">
+        <AnimatePresence mode="popLayout">
+          <motion.div
+            key={activeIndex}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 2, ease: "easeInOut" }}
+            className="absolute inset-0"
           >
-            <img
-              src={img}
-              alt={`Wellness background ${index + 1}`}
-              className="w-full h-full object-cover scale-105 animate-slow-zoom"
+            <motion.img
+              initial={{ scale: 1.2 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 7, ease: "linear" }}
+              src={HERO_IMAGES[activeIndex]}
+              alt="Wellness"
+              className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-brand-black/40" />
-          </div>
-        ))}
+            {/* Dark gradient to ensure text readability */}
+            <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/40 to-transparent" />
+          </motion.div>
+        </AnimatePresence>
       </div>
 
-      {/* Main Content */}
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-24 grid lg:grid-cols-12 gap-8 items-center">
-        {/* Left Content */}
-        <div className="lg:col-span-7 w-full">
-          <h1 className="font-playfair font-black text-white leading-[1.1] tracking-tight mb-6 text-[clamp(2rem,5vw,4rem)]">
-            Transform Your<br />
-            Health, <span className="italic text-brand-yellow">Naturally.</span>
-          </h1>
 
-          <div className="flex items-center gap-4 mb-6 pl-4 border-l-2 border-brand-yellow/40">
-            <h2 className="text-base sm:text-lg font-light text-white leading-relaxed">
-              Weight Loss that Heals,{' '}
-              <span className="font-bold italic">NOT Hurts</span>
-            </h2>
-          </div>
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-24">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
 
-          <p className="text-gray-200 text-base lg:text-lg leading-relaxed max-w-xl mb-10 font-medium">
-            Experience India's premier home-based naturopathy programs. No gym,
-            no pills, no side effects — <span className="text-white font-bold">just science-backed natural healing</span>.
-          </p>
-
-          <div className="flex flex-wrap gap-4">
-            <a
-              href="#plans"
-              className="ripple-btn group px-8 py-4 rounded-full bg-brand-yellow text-brand-black font-black shadow-lg shadow-brand-yellow/20 transition-all duration-500 hover:scale-105 hover:shadow-brand-yellow/40 flex items-center gap-2 text-xs uppercase tracking-widest"
+          {/* Left Content */}
+          <div className="lg:col-span-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
             >
-              Explore Our Plans
-              <svg
-                className="w-4 h-4 transition-transform group-hover:translate-x-1"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="3"
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6"
               >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FFC300] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FFC300]"></span>
+                </span>
+                <span className="text-white text-[10px] font-black uppercase tracking-[0.2em]">India's Premier Naturopathy</span>
+              </motion.div>
 
-            <a
-              href="#contact"
-              className="px-8 py-4 rounded-full border-2 border-white/30 text-white font-black text-xs uppercase tracking-widest backdrop-blur-sm transition-all duration-500 hover:bg-white hover:text-brand-black"
-            >
-              Contact Us
-            </a>
-          </div>
-        </div>
+              <h1 className="font-playfair font-black text-white leading-[1.05] tracking-tight mb-6 text-[clamp(2.5rem,6vw,5rem)] drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+                Transform Your<br />
+                Health, <span className="italic text-[#FFC300]">Naturally.</span>
+              </h1>
 
-        {/* Right Content */}
-        <div className="lg:col-span-5 relative hidden lg:block w-full">
-          <div className="absolute inset-0 bg-brand-yellow/5 blur-[100px] rounded-full pointer-events-none animate-pulse" />
-
-          <div className="relative flex flex-col gap-4">
-            {STATS.map((stat) => (
-              <div
-                key={stat.id}
-                className="bg-white rounded-2xl p-5 border border-white shadow-[0_20px_50px_rgba(0,0,0,0.2)] transition-transform hover:scale-105"
-              >
-                <div className="font-playfair text-xl font-black text-brand-black mb-1">
-                  {stat.value}
-                </div>
-                <div className="text-[10px] uppercase tracking-widest font-bold text-gray-500">
-                  {stat.label}
-                </div>
+              <div className="flex items-center gap-4 mb-8 pl-4 border-l-2 border-[#FFC300]">
+                <h2 className="text-lg sm:text-xl font-light text-white/90 leading-relaxed italic">
+                  Weight Loss that Heals, <span className="font-bold text-white not-italic underline decoration-[#FFC300] underline-offset-8">NOT Hurts</span>
+                </h2>
               </div>
-            ))}
+
+              <div className="flex flex-wrap gap-5">
+                <motion.a
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  href="#plans"
+                  className="px-12 py-4 rounded-full bg-[#FFC300] text-black font-black flex items-center gap-3 text-lg uppercase tracking-widest shadow-xl"
+                >
+                  Explore Plans
+                </motion.a>
+                <motion.a
+                  whileHover={{ backgroundColor: "rgba(255,255,255,1)", color: "#000" }}
+                  href="#contact"
+                  className="px-12 py-4 rounded-full border-2 border-white/20 text-white font-black text-lg uppercase tracking-widest backdrop-blur-sm transition-all"
+                >
+                  Get Started
+                </motion.a>
+              </div>
+            </motion.div>
           </div>
+
+          {/* Right Side Stats */}
+          <div className="lg:col-span-4 hidden lg:block">
+            <div className="grid gap-4">
+              {STATS.map((stat, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.5 + i * 0.1 }}
+                  className="p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl"
+                >
+                  <h4 className="text-3xl font-black text-[#FFC300] mb-1">{stat.value}</h4>
+                  <p className="text-white/50 text-xs font-bold uppercase tracking-widest">{stat.label}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
-      
-      {/* Carousel Indicators */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-20">
-        {HERO_IMAGES.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setActiveIndex(index)}
-            className={`h-1.5 rounded-full transition-all duration-500 ${
-              index === activeIndex ? 'w-8 bg-brand-yellow' : 'w-2 bg-white/30 hover:bg-white/50'
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
+
+      {/* Modern Slide Indicators */}
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-4 z-20">
+        <div className="flex gap-2">
+          {HERO_IMAGES.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setActiveIndex(index)}
+              className={`h-1.5 rounded-full transition-all duration-700 ${index === activeIndex ? 'w-12 bg-[#FFC300]' : 'w-4 bg-white/20 hover:bg-white/40'}`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

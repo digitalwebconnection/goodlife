@@ -8,7 +8,7 @@ import HealthChallenges from './components/HealthChallenges';
 import SlimAtHome from './components/SlimAtHome';
 import About from './components/About';
 import StatsCounter from './components/StatsCounter';
-import Plans from './components/Plans';
+// import Plans from './components/Plans';
 import Contact from './components/Contact';
 import BMICalculator from './components/BMICalculator';
 import Products from './components/Products';
@@ -17,6 +17,8 @@ import Testimonials from './components/Testimonials';
 // import CTABanner from './components/CTABanner';
 // import BlogPosts from './components/BlogPosts';
 import Footer from './components/Footer';
+import WellnessHeroSection from './components/WellnessSection';
+import TestimonialsGallery from './components/TestimonialsGallery';
 
 export default function App() {
   useEffect(() => {
@@ -57,11 +59,14 @@ export default function App() {
         <SlimAtHome />
         <About />
         <StatsCounter />
-        <Plans />
-        <Contact />
+        {/* <Plans /> */}
+
         <BMICalculator />
+        <WellnessHeroSection />
         <Products />
+        <Contact />
         <FAQ />
+        <TestimonialsGallery />
         <Testimonials />
         {/* <CTABanner /> */}
         {/* <BlogPosts /> */}

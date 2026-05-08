@@ -1,4 +1,19 @@
-import founderPic from '../assets/pic.jpg';
+// @ts-ignore
+import FlyingPosters from './FlyingPosters';
+import image1 from '../assets/1.jpg'
+import image2 from '../assets/2.jpeg'
+import image3 from '../assets/3.jpg'
+import image4 from '../assets/4.webp'
+
+
+
+const POSTER_IMAGES = [
+  image1,
+  image2,
+  image3,
+  image4,
+
+];
 
 const TRUST_POINTS = [
   {
@@ -46,7 +61,7 @@ export default function About() {
           {/* Left: Text Content */}
           <div className="lg:col-span-7" data-aos="fade-right">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-[2px] bg-brand-yellow" />
+              <div className="w-12 h-[2px] bg-[#FFC300]" />
               <p className="text-brand-black font-black text-[10px] uppercase tracking-[0.5em]">
                 Founded 2007
               </p>
@@ -54,14 +69,14 @@ export default function About() {
 
             <h2 className="text-brand-black mb-8 leading-[1.1] text-[clamp(2.2rem,5vw,3.5rem)] font-playfair font-bold">
               18+ Years of <br />
-              <span className="text-brand-yellow">Natural Healing</span> Mastery
+              <span className="text-[#FFC300]">Natural Healing</span> Mastery
             </h2>
 
             <div className="space-y-6 text-gray-600 leading-relaxed max-w-2xl text-base lg:text-lg mb-10">
               <p>
                 <strong className="text-brand-black font-black">Mission GoodLife</strong> was founded on a simple yet profound truth: your body has an innate ability to heal itself when given the right natural conditions.
               </p>
-              <p className="border-l-4 border-brand-yellow pl-6 py-3 italic bg-brand-light/50 text-sm lg:text-base">
+              <p className="border-l-4 border-[#FFC300] pl-6 py-3 italic bg-brand-light/50 text-sm lg:text-base">
                 Under the visionary leadership of Mr. Sanjay K. Sinha, we have spent nearly two decades perfecting the art of home-based naturopathy.
               </p>
             </div>
@@ -70,11 +85,11 @@ export default function About() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {TRUST_POINTS.map((pt, i) => (
                 <div key={i} className="flex flex-col gap-3 group">
-                  <div className="w-12 h-12 bg-brand-black flex items-center justify-center text-brand-yellow transition-all duration-500 group-hover:bg-brand-yellow group-hover:text-brand-black">
+                  <div className="w-12 h-12 bg-brand-black flex items-center justify-center text-[#FFC300] transition-all duration-500 group-hover:bg-[#FFC300] group-hover:text-brand-black">
                     <div className="w-6 h-6">{pt.icon}</div>
                   </div>
                   <div>
-                    <h4 className="text-brand-black font-black text-sm uppercase tracking-tight mb-1 group-hover:text-brand-yellow transition-colors">
+                    <h4 className="text-brand-black font-black text-sm uppercase tracking-tight mb-1 group-hover:text-[#FFC300] transition-colors">
                       {pt.title}
                     </h4>
                     <p className="text-gray-500 text-xs">
@@ -86,34 +101,20 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right: Founder Card & Stats */}
+          {/* Right: FlyingPosters WebGL Gallery */}
           <div className="lg:col-span-5" data-aos="fade-left">
-            <div className="relative bg-brand-black text-white shadow-2xl overflow-hidden max-w-md ml-auto">
-              {/* Founder Image Area */}
-              <div className="relative h-84 overflow-hidden group">
-                <img
-                  src={founderPic}
-                  alt="Mr. Sanjay K. Sinha"
-                  className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent" />
-                <div className="absolute bottom-6 left-6">
-                  <p className="font-black text-[9px] uppercase tracking-[0.4em] text-brand-yellow mb-1">Founder & Chief Health Coach</p>
-                  <p className="font-playfair font-bold text-xl tracking-tight">Mr. Sanjay K. Sinha</p>
-                </div>
-              </div>
-
-              {/* Bottom Quote Section */}
-              <div className="border-t border-white/10 bg-white/[0.03] p-8 lg:p-10">
-                <div className="relative">
-                  <svg className="absolute -top-2 -left-2 w-8 h-8 text-brand-yellow opacity-10" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M14.017 21L14.017 18C14.017 16.895 14.912 16 16.017 16H19.017V14H17.017C15.912 14 15.017 13.105 15.017 12V9C15.017 7.895 15.912 7 17.017 7H20.017C21.122 7 22.017 7.895 22.017 9V18C22.017 19.657 20.674 21 19.017 21H14.017ZM3.017 21V18C3.017 16.895 3.912 16 5.017 16H8.017V14H6.017C4.912 14 4.017 13.105 4.017 12V9C4.017 7.895 4.912 7 6.017 7H9.017C10.122 7 11.017 7.895 11.017 9V18C11.017 19.657 9.674 21 8.017 21H3.017Z" />
-                  </svg>
-                  <p className="text-sm lg:text-base font-medium leading-relaxed italic text-gray-400 relative z-10">
-                    "Your health is your greatest asset. Our mission is to give you the keys to unlock your body's natural healing potential."
-                  </p>
-                </div>
-              </div>
+            <div className="relative overflow-hidden" style={{ height: '640px' }}>
+              
+              <FlyingPosters
+                items={POSTER_IMAGES}
+                planeWidth={480}
+                planeHeight={460}
+                distortion={1}
+                scrollEase={0.1}
+                cameraFov={65}
+                cameraZ={22}
+                autoSpeed={0.1}
+              />
             </div>
           </div>
 
